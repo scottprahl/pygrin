@@ -13,7 +13,7 @@ from setuptools import setup
 setup(
 	name='pygrin',
 	packages=['pygrin'],
-	version='0.8.0',
+	version='0.1.0',
 	description='Gradient Index (GRIN) Lens Calculations',
 	url='https://github.com/scottprahl/pygrin.git',  
 	author='Scott Prahl',
