@@ -13,14 +13,14 @@ from setuptools import setup
 setup(
 	name='pygrin',
 	packages=['pygrin'],
-	version='0.8.0',
+	version='0.1.0',
 	description='Gradient Index (GRIN) Lens Calculations',
 	url='https://github.com/scottprahl/pygrin.git',  
 	author='Scott Prahl',
 	author_email='scott.prahl@oit.edu',
 	license='MIT',
 	classifiers=[
-		'Development Status :: 4 - Beta',
+		'Development Status :: 3 - Alpha',
 		'License :: OSI Approved :: MIT License',
 		'Intended Audience :: Science/Research',
 		'Programming Language :: Python',
