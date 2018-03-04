@@ -1,7 +1,7 @@
 # pygrin
 
-A basic collection of routines to ray trace through gradient
-index lenses with a parabolic radial profile.
+A basic collection of routines to ray trace through graded
+index (GRIN) lenses with a parabolic radial profile.
 	
 	
 ## Usage
