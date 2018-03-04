@@ -1,9 +1,9 @@
 Releasing a new version
 
 # versioning
-update the version in setup.py
+update the version in setup.py and pygrin/__init__.py
 
-> git commit setup.py -m 'update version'
+> git commit setup.py pygrin/__init__.py -m 'update version'
 > git push
 
 update CHANGELOG.txt using `git shortlog`
