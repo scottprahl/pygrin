@@ -1,12 +1,25 @@
-#/usr/local/bin/python
-
-from __future__ import division, absolute_import, print_function
-
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.patches as patches
 
-
+__all__ = [ 'ABCD',
+			'BFL',
+			'EFL',
+			'FFL',
+			'NA',
+			'cardinal_points',
+			'full_meridional_curve',
+			'gradient',
+			'hyperbolic_secant_profile_index',
+			'image_distance',
+			'image_mag',
+			'max_angle',
+			'meridional_curve',
+			'parabolic_profile_index',
+			'pitch',
+			'principal_planes_plt',
+ ]
+ 
 def gradient(pitch, length):
     """
     Return the gradient of a grin lens based on its pitch and length.
@@ -35,7 +48,7 @@ def pitch(gradient, length):
     return length * gradient / (2 * np.pi)
 
 
-def index(n_0, pitch, length, r):
+def parabolic_profile_index(n_0, pitch, length, r):
     """
     Return the index of a parabolic grin lens at a particular radius.
 
@@ -49,6 +62,21 @@ def index(n_0, pitch, length, r):
         the index of a parabolic grin lens at r [unitless]
     """
     return n_0 * (1 - 2 * (np.pi * pitch * r / length)**2)
+
+
+def hyperbolic_secant_profile_index(n_0, alpha, r):
+    """
+    Return the index of a hyperbolic secant grin lens at a particular radius.
+
+    Args:
+        n_0 : index of refraction at center of grin lens [unitless]
+        alpha : parameter (like gradient for parabolic lens) [1/mm]
+        r : distance from center of lens [mm]
+
+    Returns:
+        the index of a parabolic grin lens at r [unitless]
+    """
+    return np.sqrt(1 + (n_0**2 - 1.0)/np.cosh(alpha*r)**2)
 
 
 def EFL(n_0, pitch, length):
@@ -261,7 +289,7 @@ def full_meridional_curve(n_0, pitch, length, z_obj, r_obj, r_lens, npoints=40):
     theta_i = np.arctan((r_obj - r_lens) / z_obj)
 
     # angle inside lens at front surface
-    n_lens = index(n_0, pitch, length, r_lens)
+    n_lens = parabolic_profile_index(n_0, pitch, length, r_lens)
     theta_lens = np.arcsin(np.sin(theta_i) / n_lens)
 
     z, r = meridional_curve(n_0, pitch, length, r_lens,
