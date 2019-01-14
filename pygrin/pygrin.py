@@ -242,7 +242,7 @@ def cardinal_points(n_0, pitch, length, offset=0):
 
 def meridional_curve(n_0, pitch, length, r_i, theta_i, npoints=40):
     """
-    Return arrays describing for a path for a ray entering a grin lens 
+    Return arrays describing the path of a ray passing through a grin lens 
 
     Args:
         n_0 : index of refraction at center of grin lens [unitless]
@@ -253,7 +253,7 @@ def meridional_curve(n_0, pitch, length, r_i, theta_i, npoints=40):
         npoints : (integer) number of points in the returned curve
 
     Returns:
-        arrays (both in [mm]) for points along the curve inside the grin lens
+        z, r: arrays of points along the curve inside the grin lens [mm]
     """
 
     z = np.linspace(0, length, npoints)
@@ -326,11 +326,13 @@ def principal_planes_plt(n_0, pitch, length, diameter):
     amin = min([FF, FL, FPP, SPP, SL, BF])
     amax = max([FF, FL, FPP, SPP, SL, BF])
     radius = diameter / 2
-    plt.plot([FL, SL], [0, 0], lw=0.5, color='black')
+
 
     rect = patches.Rectangle((FL, -radius), length,
                              diameter, lw=0, facecolor='lightgray', alpha=0.3)
+
     plt.axes().add_patch(rect)
+    plt.plot([FL, SL], [0, 0], lw=0.5, color='black')
 
     if np.abs(FPP) < 10 * length:
         plt.plot([FPP, FPP], [-radius, radius], ':k')
