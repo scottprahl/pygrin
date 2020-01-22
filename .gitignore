@@ -1,4 +1,5 @@
 .DS_Store
 *.pyc
-laserbeamsize/__pycache__/
+pygrin/__pycache__/
 doc/.ipynb_checkpoints
+pygrin.egg-info/
