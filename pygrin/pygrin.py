@@ -1,25 +1,50 @@
+"""
+A set of routines for doing GRadient Index lens calculations and plots.
+
+import pygin
+
+length = 7    # mm
+diameter = 2  # mm
+r = np.linspace(-1,1,11) # mm
+
+n_0 = 1.48
+pitch = 0.25
+theta_i = 0
+
+aplt = pygrin.principal_planes_plt(n_0, pitch, length, diameter)
+for r_i in r:
+    z,r = pygrin.meridional_curve(n_0, pitch, length, r_i, theta_i)
+    plt.plot(z,r,color='blue')
+
+aplt.show()
+"""
+
+# pylint: disable=invalid-name
+# pylint: disable=too-many-arguments
+
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.patches as patches
 
-__all__ = [ 'ABCD',
-			'BFL',
-			'EFL',
-			'FFL',
-			'NA',
-			'cardinal_points',
-			'full_meridional_curve',
-			'gradient',
-			'hyperbolic_secant_profile_index',
-			'image_distance',
-			'image_mag',
-			'max_angle',
-			'meridional_curve',
-			'parabolic_profile_index',
-			'pitch',
-			'principal_planes_plt',
- ]
- 
+__all__ = ('ABCD',
+           'BFL',
+           'EFL',
+           'FFL',
+           'NA',
+           'cardinal_points',
+           'full_meridional_curve',
+           'gradient',
+           'hyperbolic_secant_profile_index',
+           'image_distance',
+           'image_mag',
+           'max_angle',
+           'meridional_curve',
+           'parabolic_profile_index',
+           'period',
+           'principal_planes_plt',
+           )
+
+
 def gradient(pitch, length):
     """
     Return the gradient of a grin lens based on its pitch and length.
@@ -34,18 +59,18 @@ def gradient(pitch, length):
     return 2 * np.pi * pitch / length
 
 
-def pitch(gradient, length):
+def period(grad, length):
     """
-    Return the pitch of a grin lens based on its gradient and length.
+    Return the period or pitch of a grin lens based on its gradient and length.
 
     Args:
-        gradient : geometric gradient of the lens [1/mm]
+        grad : geometric gradient of the lens [1/mm]
         length : length of grin lens [mm]
 
     Returns:
         the pitch or period of the grin lens [unitless]
     """
-    return length * gradient / (2 * np.pi)
+    return length * grad / (2 * np.pi)
 
 
 def parabolic_profile_index(n_0, pitch, length, r):
@@ -126,7 +151,7 @@ def BFL(n_0, pitch, length):
 
 def max_angle(n_0, pitch, length, diameter):
     """
-    Return the maximum acceptance angle of a grin lens in air
+    Return the maximum acceptance angle of a grin lens in air.
 
     Args:
         n_0 : index of refraction at center of grin lens [unitless]
@@ -142,7 +167,7 @@ def max_angle(n_0, pitch, length, diameter):
 
 def NA(n_0, pitch, length, diameter):
     """
-    Return the numerical aperture of a grin lens in air
+    Return the numerical aperture of a grin lens in air.
 
     Args:
         n_0 : index of refraction at center of grin lens [unitless]
@@ -169,7 +194,6 @@ def ABCD(n_0, pitch, length, z):
     Returns:
         the ABCD matrix for meridonal ray propagation [radians]
     """
-
     g = gradient(pitch, length)
     cos = np.cos(g * z)
     sin = np.sin(g * z)
@@ -178,7 +202,7 @@ def ABCD(n_0, pitch, length, z):
 
 def image_distance(n_0, pitch, length, s):
     """
-    Return the image distance for an object
+    Return the image distance for an object.
 
     Args:
         n_0 : index of refraction at center of grin lens [unitless]
@@ -223,7 +247,7 @@ def cardinal_points(n_0, pitch, length, offset=0):
         length : axial length of the lens [mm]
 
     Returns:
-        the Front focal point, first lens, first principal plane, 
+        the Front focal point, first lens, first principal plane,
         second principal plane, second lens, back focal point [mm]
     """
     efl = EFL(n_0, pitch, length)
@@ -242,7 +266,7 @@ def cardinal_points(n_0, pitch, length, offset=0):
 
 def meridional_curve(n_0, pitch, length, r_i, theta_i, npoints=40):
     """
-    Return arrays describing the path of a ray passing through a grin lens 
+    Return arrays describing the path of a ray passing through a grin lens.
 
     Args:
         n_0 : index of refraction at center of grin lens [unitless]
@@ -255,7 +279,6 @@ def meridional_curve(n_0, pitch, length, r_i, theta_i, npoints=40):
     Returns:
         z, r: arrays of points along the curve inside the grin lens [mm]
     """
-
     z = np.linspace(0, length, npoints)
     V = np.array([r_i, n_0 * np.cos(np.pi / 2 - theta_i)])
 
@@ -263,14 +286,16 @@ def meridional_curve(n_0, pitch, length, r_i, theta_i, npoints=40):
     r = np.zeros(npoints)
     for i in range(npoints):
         abcd = ABCD(n_0, pitch, length, z[i])
-        r[i], pz = np.dot(abcd, V)
+        r[i], _ = np.dot(abcd, V)
     return z, r
 
 
 def full_meridional_curve(n_0, pitch, length, z_obj, r_obj, r_lens, npoints=40):
     """
-    Return arrays describing for a path for a ray launched from (z_obj,r_obj)
-    hitting the front face of the lens at (0,r_lens)
+    Return arrays for the path for a ray in a GRIN lens.
+    
+    The light ray starts at (z_obj,r_obj) and hits the front surface of
+    the front face of the GRIN lens at (0,r_lens).
 
     Args:
         n_0 : index of refraction at center of grin lens [unitless]
@@ -282,9 +307,8 @@ def full_meridional_curve(n_0, pitch, length, z_obj, r_obj, r_lens, npoints=40):
         npoints : (optional) number of points in the returned curve
 
     Returns:
-        two arrays describing the path from the object to the image
+        two arrays (z,r) describing the path from the object to the image
     """
-
     # angle in air
     theta_i = np.arctan((r_obj - r_lens) / z_obj)
 
@@ -310,7 +334,7 @@ def full_meridional_curve(n_0, pitch, length, z_obj, r_obj, r_lens, npoints=40):
 
 def principal_planes_plt(n_0, pitch, length, diameter):
     """
-    Return a plot for a grin lens showing the cardinal points
+    Return a plot for a grin lens showing the cardinal points.
 
     Args:
         n_0 : index of refraction at center of grin lens [unitless]
@@ -321,12 +345,8 @@ def principal_planes_plt(n_0, pitch, length, diameter):
     Returns:
         a plot of the lens
     """
-
     FF, FL, FPP, SPP, SL, BF = cardinal_points(n_0, pitch, length)
-    amin = min([FF, FL, FPP, SPP, SL, BF])
-    amax = max([FF, FL, FPP, SPP, SL, BF])
     radius = diameter / 2
-
 
     rect = patches.Rectangle((FL, -radius), length,
                              diameter, lw=0, facecolor='lightgray', alpha=0.3)
