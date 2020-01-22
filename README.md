@@ -27,6 +27,7 @@ Light paths in a 0.25 pitch GRIN lens::
     print('working distance = %.2f mm'%(efl-ffl))
 
 Produces::
+
     expected pitch = 0.29,            calculated 0.29
     expected FFL = 0.46,              calculated 0.47
     expected NA = 0.46,               calculated 0.46
