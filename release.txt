@@ -3,10 +3,10 @@ Releasing a new version
 # make sure all Jupyter notebooks in the doc folder still work
 
 # make sure things are not broken and that files match up
-  check-manifest
-  pyroma -d .
   pylint pygrin/pygrin.py
   pep257 pygrin/pygrin.py
+  check-manifest
+  pyroma -d .
   
 # update the version in setup.py
   git commit setup.py -m 'update version'
@@ -22,7 +22,7 @@ Releasing a new version
 
 # upload source to pypi
   rm -rf dist/*
-  python setup.py sdist
+  python3 setup.py sdist
   twine upload dist/*
 
 # test the install by removing local developer version
