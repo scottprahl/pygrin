@@ -12,12 +12,11 @@ Typical usage::
     theta_i = 0              # launch angle
     pitch = 0.25             # quarter pitch lens
 
-    aplt = pygrin.principal_planes_plt(n_0, pitch, length, diameter)
+    pygrin.plot_principal_planes(n_0, pitch, length, diameter)
     for r_i in r:
         z,r = pygrin.meridional_curve(n_0, pitch, length, r_i, theta_i)
         plt.plot(z,r,color='blue')
-
-    aplt.show()
+    plt.show()
 """
 
 # pylint: disable=invalid-name
@@ -42,7 +41,7 @@ __all__ = ('ABCD',
            'meridional_curve',
            'parabolic_profile_index',
            'period',
-           'principal_planes_plt',
+           'plot_principal_planes',
            )
 
 
@@ -333,18 +332,15 @@ def full_meridional_curve(n_0, pitch, length, z_obj, r_obj, r_lens, npoints=40):
     return z, r
 
 
-def principal_planes_plt(n_0, pitch, length, diameter):
+def plot_principal_planes(n_0, pitch, length, diameter):
     """
-    Return a plot for a grin lens showing the cardinal points.
+    Create a plot for a grin lens showing the cardinal points.
 
     Args:
         n_0 : index of refraction at center of grin lens [unitless]
         pitch : pitch or period of the lens [unitless]
         length : axial length of the lens [mm]
         diameter : diameter of the lens [mm]
-
-    Returns:
-        a plot of the lens
     """
     FF, FL, FPP, SPP, SL, BF = cardinal_points(n_0, pitch, length)
     radius = diameter / 2
@@ -372,4 +368,3 @@ def principal_planes_plt(n_0, pitch, length, diameter):
         plt.annotate(" f'", xy=(BF, 0), ha='left', fontsize=16)
 
     plt.title(r'pitch=%.2f, n$_0$=%.3f' % (pitch, n_0))
-    return plt
