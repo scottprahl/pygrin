@@ -1,2 +1,5 @@
-include *.txt
-include doc/*.ipynb
+include CHANGELOG.txt
+include LICENSE.txt
+exclude release.txt
+exclude .gitignore
+exclude docs/01-grin-lens-basics.ipynb

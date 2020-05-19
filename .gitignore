@@ -1,5 +1,5 @@
 .DS_Store
 *.pyc
 pygrin/__pycache__/
-doc/.ipynb_checkpoints
+docs/.ipynb_checkpoints
 pygrin.egg-info/
