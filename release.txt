@@ -27,3 +27,5 @@ Releasing a new version
   pip install pygrin
   pip uninstall pygrin
   conda develop .
+
+# manually update release on github

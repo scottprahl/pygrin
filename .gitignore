@@ -5,3 +5,4 @@ docs/.ipynb_checkpoints
 pygrin.egg-info/
 docs/_build/
 docs/api/
+dist/
