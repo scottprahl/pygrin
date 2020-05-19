@@ -1,30 +1,18 @@
-Links
-=====
-.. toctree::
-   :maxdepth: 3
-   :titlesonly:
-   
-   readme
-   changelog
-   0-Basics.ipynb
-   1-DS1000E-Waveforms.ipynb
-   1-DS1000Z-Waveforms.ipynb
-   1-DS2000-Waveforms.ipynb
-   1-DS4000-Waveforms.ipynb
-
 .. include:: ../README.rst
 
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
+Documentation
+-------------
+.. toctree::
+   :maxdepth: 3
+   
+   01-grin-lens-basics.ipynb
 
 API
-===
+---
 
-.. automodapi:: RigolWFM.channel
+.. automodapi:: pygrin.pygrin
 
-.. automodapi:: RigolWFM.wfm
+Changelog
+---------
+.. include:: ../CHANGELOG.rst
 
-.. automodapi:: RigolWFM.wfmconvert

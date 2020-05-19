@@ -1,22 +1,23 @@
 """
-A set of routines for doing GRadient Index lens calculations and plots.
+A set of routines for doing Gradient Index lens calculations and plots.
 
-import pygin
+Typical usage::
 
-length = 7    # mm
-diameter = 2  # mm
-r = np.linspace(-1,1,11) # mm
+    import pygin
 
-n_0 = 1.48
-pitch = 0.25
-theta_i = 0
+    length = 7               # mm
+    diameter = 2             # mm
+    r = np.linspace(-1,1,11) # mm
+    n_0 = 1.48               # refractive index at r=0
+    theta_i = 0              # launch angle
+    pitch = 0.25             # quarter pitch lens
 
-aplt = pygrin.principal_planes_plt(n_0, pitch, length, diameter)
-for r_i in r:
-    z,r = pygrin.meridional_curve(n_0, pitch, length, r_i, theta_i)
-    plt.plot(z,r,color='blue')
+    aplt = pygrin.principal_planes_plt(n_0, pitch, length, diameter)
+    for r_i in r:
+        z,r = pygrin.meridional_curve(n_0, pitch, length, r_i, theta_i)
+        plt.plot(z,r,color='blue')
 
-aplt.show()
+    aplt.show()
 """
 
 # pylint: disable=invalid-name
