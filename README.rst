@@ -1,9 +1,11 @@
-# pygrin
+pygrin
+======
 
 A basic collection of routines to ray trace through graded
 index (GRIN) lenses with a parabolic radial profile.
 
-## Usage
+Usage
+-----
 
 Example Light paths in a 0.25 pitch GRIN lens from an ancient Melles Griot Catalog::
 
@@ -37,15 +39,19 @@ But the real utility of this module is creating plots that show the path of rays
 a GRIN lens.   For examples, see the Jupyter notebooks at 
 <https://github.com/scottprahl/pygrin/tree/master/doc>
 
-## Installation
+<https://pygrin.readthedocs.org>
+
+Installation
+------------
 
     pip install pygrin
 
-### Dependencies
+Dependencies
+------------
 
 Required Python modules: numpy, matplotlib
 
 
-### License
-
+License
+-------
 pygrin is licensed under the terms of the MIT license.
