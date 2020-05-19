@@ -1,5 +1,6 @@
-include CHANGELOG.txt
+include CHANGELOG.rst
 include LICENSE.txt
 exclude release.txt
 exclude .gitignore
-exclude docs/01-grin-lens-basics.ipynb
+exclude Makefile
+exclude docs/*

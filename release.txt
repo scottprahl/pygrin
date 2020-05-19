@@ -3,7 +3,7 @@ Releasing a new version
 # make sure all Jupyter notebooks in the docs folder still work
 
 # make sure things are not broken and that files match up
-  make rdist
+  make rcheck
   
 # update the version in setup.py
   git commit setup.py -m 'update version'
