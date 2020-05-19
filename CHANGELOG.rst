@@ -1,6 +1,10 @@
 Changelog
 =========
 
+v0.4.1
+------
+* update function parameters for sphinx automodapi
+
 v0.4.0
 ------
 * sphinx documentation

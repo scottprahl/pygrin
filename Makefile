@@ -5,7 +5,7 @@ BUILDDIR      = docs/_build
 
 check:
 	-pylint pygrin/pygrin.py
-	-pep257 pygrin/pygrin.py
+	-pep257 --ignore D401 pygrin/pygrin.py
 
 html:
 	$(SPHINXBUILD) -b html "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS)
@@ -15,6 +15,8 @@ clean:
 	rm -rf pygrin.egg-info
 	rm -rf pygrin/__pycache__
 	rm -rf docs/_build/*
+	rm -rf docs/_build/.buildinfo
+	rm -rf docs/_build/.doctrees
 	rm -rf docs/api/*
 	rm -rf .tox
 	rm -rf 

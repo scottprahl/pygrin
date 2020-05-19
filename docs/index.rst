@@ -1,18 +1,14 @@
 .. include:: ../README.rst
 
-Documentation
+Example Usage
 -------------
 .. toctree::
-   :maxdepth: 3
-   
-   01-grin-lens-basics.ipynb
+   :maxdepth: 2
+   :titlesonly:
 
-API
----
+   01-grin-lens-basics.ipynb
 
 .. automodapi:: pygrin.pygrin
 
-Changelog
----------
 .. include:: ../CHANGELOG.rst
 

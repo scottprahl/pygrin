@@ -47,152 +47,194 @@ __all__ = ('ABCD',
 
 def gradient(pitch, length):
     """
-    Return the gradient of a grin lens based on its pitch and length.
+    Gradient of a grin lens based on its pitch and length.
 
     Args:
-        pitch : pitch or period of the lens [unitless]
-        length : length of grin lens [mm]
+        pitch: float
+            pitch or period of the lens [unitless]
+        length: float
+            length of grin lens [mm]
 
     Returns:
-        the gradient characterizing the index of refraction profile [1/mm]
+        float
+            the gradient characterizing the index of refraction profile [1/mm]
     """
     return 2 * np.pi * pitch / length
 
 
 def period(grad, length):
     """
-    Return the period or pitch of a grin lens based on its gradient and length.
+    Period or pitch of a grin lens based on its gradient and length.
 
     Args:
-        grad : geometric gradient of the lens [1/mm]
-        length : length of grin lens [mm]
+        grad: float
+            geometric gradient of the lens [1/mm]
+        length: float
+            length of grin lens [mm]
 
     Returns:
-        the pitch or period of the grin lens [unitless]
+        float
+            the pitch or period of the grin lens [unitless]
     """
     return length * grad / (2 * np.pi)
 
 
 def parabolic_profile_index(n_0, pitch, length, r):
     """
-    Return the index of a parabolic grin lens at a particular radius.
+    Index of a parabolic grin lens at a particular radius.
 
     Args:
-        n_0 : index of refraction at center of grin lens [unitless]
-        pitch : pitch or period of the lens [unitless]
-        length : axial length of the lens [mm]
-        r : distance from center of lens [mm]
+        n_0: float
+            index of refraction at center of grin lens [unitless]
+        pitch: float
+            pitch or period of the lens [unitless]
+        length: float
+            axial length of the lens [mm]
+        r: float
+            distance from center of lens [mm]
 
     Returns:
-        the index of a parabolic grin lens at r [unitless]
+        float
+            the index of a parabolic grin lens at r [unitless]
     """
     return n_0 * (1 - 2 * (np.pi * pitch * r / length)**2)
 
 
 def hyperbolic_secant_profile_index(n_0, alpha, r):
     """
-    Return the index of a hyperbolic secant grin lens at a particular radius.
+    Index of a hyperbolic secant grin lens at a particular radius.
 
     Args:
-        n_0 : index of refraction at center of grin lens [unitless]
-        alpha : parameter (like gradient for parabolic lens) [1/mm]
-        r : distance from center of lens [mm]
+        n_0: float
+            index of refraction at center of grin lens [unitless]
+        alpha: float
+            parameter (like gradient for parabolic lens) [1/mm]
+        r: float
+            distance from center of lens [mm]
 
     Returns:
-        the index of a parabolic grin lens at r [unitless]
+        float
+            the index of a parabolic grin lens at r [unitless]
     """
     return np.sqrt(1 + (n_0**2 - 1.0)/np.cosh(alpha*r)**2)
 
 
 def EFL(n_0, pitch, length):
     """
-    Return the effective focal length of a grin lens.
+    Effective focal length of a grin lens.
 
     Args:
-        n_0 : index of refraction at center of grin lens [unitless]
-        pitch : pitch or period of the lens [unitless]
-        length : axial length of the lens [mm]
+        n_0: float
+            index of refraction at center of grin lens [unitless]
+        pitch: float
+            pitch or period of the lens [unitless]
+        length: float
+            axial length of the lens [mm]
 
     Returns:
-        the effective focal length of the grin lens [mm]
+        float
+            the effective focal length of the grin lens [mm]
     """
     return length / np.sin(2 * np.pi * pitch) / (2 * np.pi * pitch * n_0)
 
 
 def FFL(n_0, pitch, length):
     """
-    Return the front focal length of a grin lens.
+    Front focal length of a grin lens.
 
     Args:
-        n_0 : index of refraction at center of grin lens [unitless]
-        pitch : pitch or period of the lens [unitless]
-        length : axial length of the lens [mm]
+        n_0: float
+            index of refraction at center of grin lens [unitless]
+        pitch: float
+            pitch or period of the lens [unitless]
+        length: float
+            axial length of the lens [mm]
 
     Returns:
-        the front focal length of the grin lens [mm]
+        float
+            the front focal length of the grin lens [mm]
     """
     return -length / np.tan(2 * np.pi * pitch) / (2 * np.pi * pitch * n_0)
 
 
 def BFL(n_0, pitch, length):
     """
-    Return the back focal length of a grin lens.
+    Back focal length of a grin lens.
 
     Args:
-        n_0 : index of refraction at center of grin lens [unitless]
-        pitch : pitch or period of the lens [unitless]
-        length : axial length of the lens [mm]
+        n_0: float
+            index of refraction at center of grin lens [unitless]
+        pitch: float
+            pitch or period of the lens [unitless]
+        length: float
+            axial length of the lens [mm]
 
     Returns:
-        the back focal length of the grin lens [mm]
+        float
+            the back focal length of the grin lens [mm]
     """
     return length + length / np.tan(2 * np.pi * pitch) / (2 * np.pi * pitch * n_0)
 
 
 def max_angle(n_0, pitch, length, diameter):
     """
-    Return the maximum acceptance angle of a grin lens in air.
+    Maximum acceptance angle of a grin lens in air.
 
     Args:
-        n_0 : index of refraction at center of grin lens [unitless]
-        pitch : pitch or period of the lens [unitless]
-        length : axial length of the lens [mm]
-        diameter : diameter of the lens [mm]
+        n_0: float
+            index of refraction at center of grin lens [unitless]
+        pitch: float
+            pitch or period of the lens [unitless]
+        length: float
+            axial length of the lens [mm]
+        diameter: float
+            diameter of the lens [mm]
 
     Returns:
-        the maximum acceptance angle of the lens in air [radians]
+        float
+            the maximum acceptance angle of the lens in air [radians]
     """
     return n_0 * np.sqrt(1 - np.cosh(diameter * pitch * np.pi / length)**-2)
 
 
 def NA(n_0, pitch, length, diameter):
     """
-    Return the numerical aperture of a grin lens in air.
+    Numerical aperture of a grin lens in air.
 
     Args:
-        n_0 : index of refraction at center of grin lens [unitless]
-        pitch : pitch or period of the lens [unitless]
-        length : axial length of the lens [mm]
-        diameter : diameter of the lens [mm]
+        n_0: float
+            index of refraction at center of grin lens [unitless]
+        pitch: float
+            pitch or period of the lens [unitless]
+        length: float
+            axial length of the lens [mm]
+        diameter: float
+            diameter of the lens [mm]
 
     Returns:
-        the numerical aperture of the grin lens in air [unitless]
+        float
+            the numerical aperture of the grin lens in air [unitless]
     """
     return np.sin(max_angle(n_0, pitch, length, diameter))
 
 
 def ABCD(n_0, pitch, length, z):
     """
-    Return ABCD matrix for meridonal ray propagation.
+    ABCD matrix for meridonal ray propagation.
 
     Args:
-        n_0 : index of refraction at center of grin lens [unitless]
-        pitch : pitch or period of the lens [unitless]
-        length : axial length of the lens [mm]
-        z : distance within lens from front surface [mm]
+        n_0: float
+            index of refraction at center of grin lens [unitless]
+        pitch: float
+            pitch or period of the lens [unitless]
+        length: float
+            axial length of the lens [mm]
+        z: float
+            distance within lens from front surface [mm]
 
     Returns:
-        the ABCD matrix for meridonal ray propagation [radians]
+        float
+            the ABCD matrix for meridonal ray propagation [radians]
     """
     g = gradient(pitch, length)
     cos = np.cos(g * z)
@@ -202,16 +244,21 @@ def ABCD(n_0, pitch, length, z):
 
 def image_distance(n_0, pitch, length, s):
     """
-    Return the image distance for an object.
+    Image distance for an object.
 
     Args:
-        n_0 : index of refraction at center of grin lens [unitless]
-        pitch : pitch or period of the lens [unitless]
-        length : axial length of the lens [mm]
-        s : distance from front of lens to object [mm]
+        n_0: float
+            index of refraction at center of grin lens [unitless]
+        pitch: float
+            pitch or period of the lens [unitless]
+        length: float
+            axial length of the lens [mm]
+        s: float
+            distance from front of lens to object [mm]
 
     Returns:
-        the image distance from the back of the lens [mm]
+        float
+            the image distance from the back of the lens [mm]
     """
     g = gradient(pitch, length)
     numer = s * np.cos(2 * np.pi * pitch) - np.sin(2 * np.pi * pitch) / g / n_0
@@ -221,16 +268,21 @@ def image_distance(n_0, pitch, length, s):
 
 def image_mag(n_0, pitch, length, s):
     """
-    Return the transverse magnification of an object located at s.
+    Transverse magnification of an object located at s.
 
     Args:
-        n_0 : index of refraction at center of grin lens [unitless]
-        pitch : pitch or period of the lens [unitless]
-        length : axial length of the lens [mm]
-        s : distance from front of lens to object [mm]
+        n_0: float
+            index of refraction at center of grin lens [unitless]
+        pitch: float
+            pitch or period of the lens [unitless]
+        length: float
+            axial length of the lens [mm]
+        s: float
+            distance from front of lens to object [mm]
 
     Returns:
-        the transvers magnification [unitless]
+        float
+            the transvers magnification [unitless]
     """
     g = gradient(pitch, length)
     twopp = 2 * np.pi * pitch
@@ -239,16 +291,31 @@ def image_mag(n_0, pitch, length, s):
 
 def cardinal_points(n_0, pitch, length, offset=0):
     """
-    Return the cardinal points of a grin lens relative to first surface.
+    Cardinal points of a grin lens relative to first surface.
 
     Args:
-        n_0 : index of refraction at center of grin lens [unitless]
-        pitch : pitch or period of the lens [unitless]
-        length : axial length of the lens [mm]
+        n_0: float
+            index of refraction at center of grin lens [unitless]
+        pitch: float
+            pitch or period of the lens [unitless]
+        length: float
+            axial length of the lens [mm]
+        offset: float (optional)
+            origin relative to first lens surface
 
     Returns:
-        the Front focal point, first lens, first principal plane,
-        second principal plane, second lens, back focal point [mm]
+        float
+            location of the front focal point [mm]
+        float
+            location of the first lens surface [mm]
+        float
+            location of the first principal plane [mm]
+        float
+            location of the second principal plane [mm]
+        float
+            location of the second lens surface [mm]
+        float
+            location of the back focal point [mm]
     """
     efl = EFL(n_0, pitch, length)
     ffl = FFL(n_0, pitch, length)
@@ -266,18 +333,27 @@ def cardinal_points(n_0, pitch, length, offset=0):
 
 def meridional_curve(n_0, pitch, length, r_i, theta_i, npoints=40):
     """
-    Return arrays describing the path of a ray passing through a grin lens.
+    Points on path of a ray passing through a grin lens.
 
     Args:
-        n_0 : index of refraction at center of grin lens [unitless]
-        pitch : pitch or period of the lens [unitless]
-        length : axial length of the lens [mm]
-        r_i : radial distance that ray hits grin lens [mm]
-        theta_i : angle of incidence [radians]
-        npoints : (integer) number of points in the returned curve
+        n_0: float
+            index of refraction at center of grin lens [unitless]
+        pitch: float
+            pitch or period of the lens [unitless]
+        length: float
+            axial length of the lens [mm]
+        r_i: float
+            radial distance that ray hits grin lens [mm]
+        theta_i: float
+            angle of incidence [radians]
+        npoints: integer
+            number of points in the returned curve
 
     Returns:
-        z, r: arrays of points along the curve inside the grin lens [mm]
+        z: array
+            axial points along the curve inside the grin lens [mm]
+        r: array
+            radial points along the curve inside the grin lens [mm]
     """
     z = np.linspace(0, length, npoints)
     V = np.array([r_i, n_0 * np.cos(np.pi / 2 - theta_i)])
@@ -292,22 +368,32 @@ def meridional_curve(n_0, pitch, length, r_i, theta_i, npoints=40):
 
 def full_meridional_curve(n_0, pitch, length, z_obj, r_obj, r_lens, npoints=40):
     """
-    Return arrays for the path for a ray in a GRIN lens.
-    
+    Points on a path from an object to image through a GRIN lens.
+
     The light ray starts at (z_obj,r_obj) and hits the front surface of
     the front face of the GRIN lens at (0,r_lens).
 
     Args:
-        n_0 : index of refraction at center of grin lens [unitless]
-        pitch : pitch or period of the lens [unitless]
-        length : axial length of the lens [mm]
-        z_obj : axial position of the object [mm]
-        r_obj : radius at which the ray leaves the object [mm]
-        r_lens : radius at which the ray hits the lens [mm]
-        npoints : (optional) number of points in the returned curve
+        n_0: float
+            index of refraction at center of grin lens [unitless]
+        pitch: float
+            pitch or period of the lens [unitless]
+        length: float
+            axial length of the lens [mm]
+        z_obj: float
+            axial position of the object [mm]
+        r_obj: float
+            radius at which the ray leaves the object [mm]
+        r_lens: float
+            radius at which the ray hits the lens [mm]
+        npoints: integer
+            (optional) number of points in the returned curve
 
     Returns:
-        two arrays (z,r) describing the path from the object to the image
+        z: array
+            axial points along path from object to image [mm]
+        r: array
+            radial points along path from object to image [mm]
     """
     # angle in air
     theta_i = np.arctan((r_obj - r_lens) / z_obj)
@@ -337,10 +423,14 @@ def plot_principal_planes(n_0, pitch, length, diameter):
     Create a plot for a grin lens showing the cardinal points.
 
     Args:
-        n_0 : index of refraction at center of grin lens [unitless]
-        pitch : pitch or period of the lens [unitless]
-        length : axial length of the lens [mm]
-        diameter : diameter of the lens [mm]
+        n_0: float
+            index of refraction at center of grin lens [unitless]
+        pitch: float
+            pitch or period of the lens [unitless]
+        length: float
+            axial length of the lens [mm]
+        diameter: float
+            diameter of the lens [mm]
     """
     FF, FL, FPP, SPP, SL, BF = cardinal_points(n_0, pitch, length)
     radius = diameter / 2
