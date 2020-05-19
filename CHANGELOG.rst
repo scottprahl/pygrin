@@ -1,4 +1,12 @@
+Changelog
+=========
+
+v0.4.0
+------
+    sphinx documentation
+
 v0.3.0
+------
     renamed pitch() to period() to avoid stepping on the name.
     improve readme
     improve packaging
@@ -7,6 +15,7 @@ v0.3.0
     fix pyroma warnings
 
 v0.2.0
+------
     initial checkin
     improve description
     import all routines by default
@@ -16,6 +25,7 @@ v0.2.0
     Merge branch 'master' of https://github.com/scottprahl/pygrin
 
 v0.2.0
+------
     fix typos
     change status to alpha
     update version
