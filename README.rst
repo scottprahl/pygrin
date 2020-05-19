@@ -36,21 +36,15 @@ Produces::
     working distance = 1.43 mm
 
 But the real utility of this module is creating plots that show the path of rays through
-a GRIN lens.   For examples, see the Jupyter notebooks at 
-<https://github.com/scottprahl/pygrin/tree/master/doc>
-
-<https://pygrin.readthedocs.org>
+a GRIN lens.   For examples, see <https://pygrin.readthedocs.io>
 
 Installation
 ------------
 
+Source code is available at <https://github.com/scottprahl/pygrin> or the module
+can be installed using `pip`::
+
     pip install pygrin
-
-Dependencies
-------------
-
-Required Python modules: numpy, matplotlib
-
 
 License
 -------
