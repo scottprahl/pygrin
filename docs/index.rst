@@ -8,7 +8,7 @@ Example Usage
 
    01-grin-lens-basics.ipynb
 
-.. automodapi:: pygrin.pygrin
+.. automodapi:: pygrin
 
 .. include:: ../CHANGELOG.rst
 
