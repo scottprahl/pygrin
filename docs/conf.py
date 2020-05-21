@@ -1,11 +1,3 @@
-# Configuration file for the Sphinx documentation builder.
-#
-# This file only contains a selection of the most common options. For a full
-# list see the documentation:
-# https://www.sphinx-doc.org/en/master/usage/configuration.html
-
-# -- Path setup --------------------------------------------------------------
-
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
@@ -40,10 +32,13 @@ extensions = [
     'sphinx_automodapi.smart_resolver',
     'nbsphinx',
 ]
+napoleon_google_docstring = True
 numpydoc_show_class_members = False
-napoleon_google_docstring = False
 napoleon_use_param = False
-napoleon_use_ivar = True
+napoleon_use_ivar = False
+napoleon_include_private_with_doc = False
+napoleon_use_rtype = False
+napoleon_use_param = False
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
