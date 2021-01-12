@@ -1,7 +1,7 @@
 Changelog
 =========
 
-v0.4.2
+v0.4.3
 ------
 * improve help(pygrin)
 * improve html at https://pygrin.readthedocs.io
