@@ -5,8 +5,8 @@ Releasing a new version
 # make sure things are not broken and that files match up
   make rcheck
   
-# update the version in setup.py
-  git commit setup.py -m 'update version'
+# update the version in setup.cfg and docs/conf.py
+  git commit setup.cfg docs/conf.py -m 'update version'
 
 # update CHANGELOG.txt using `git shortlog`
   git commit CHANGELOG.txt -m 'update recent changes' 
@@ -19,7 +19,7 @@ Releasing a new version
 # upload source to pypi
   rm -rf dist/*
   python3 setup.py sdist
-  twine upload dist/*
+  python3 -m twine upload dist/*
 
 # test the install by removing local developer version
 # installing, then uninstalling, then restoring developer version

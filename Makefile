@@ -6,6 +6,8 @@ BUILDDIR      = docs/_build
 check:
 	-pylint pygrin/pygrin.py
 	-pep257 --ignore D401 pygrin/pygrin.py
+	-pylint pygrin/__init__.py
+	-pep257 pygrin/__init__.py
 
 html:
 	$(SPHINXBUILD) -b html "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS)

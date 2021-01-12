@@ -44,7 +44,7 @@ Installation
 Source code is available at <https://github.com/scottprahl/pygrin> or the module
 can be installed using `pip`::
 
-    pip install pygrin
+    pip install --user pygrin
 
 License
 -------
