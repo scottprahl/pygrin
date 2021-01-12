@@ -8,7 +8,7 @@ Releasing a new version
 # update the version in setup.cfg and docs/conf.py
   git commit setup.cfg docs/conf.py -m 'update version'
 
-# update CHANGELOG.txt using `git shortlog`
+# update CHANGELOG.txt  `git shortlog v0.4.1..HEAD`
   git commit CHANGELOG.txt -m 'update recent changes' 
   git push
 

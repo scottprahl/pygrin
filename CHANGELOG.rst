@@ -1,6 +1,12 @@
 Changelog
 =========
 
+v0.4.2
+------
+* improve help(pygrin)
+* improve html at https://pygrin.readthedocs.io
+* use google docstrings again
+
 v0.4.1
 ------
 * update function parameters for sphinx automodapi

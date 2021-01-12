@@ -10,7 +10,5 @@ Example Usage
 
    pygrin
 
-Change Log
-==========
 .. include:: ../CHANGELOG.rst
 
