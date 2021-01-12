@@ -21,11 +21,9 @@ Releasing a new version
   python3 setup.py sdist
   python3 -m twine upload dist/*
 
-# test the install by removing local developer version
-# installing, then uninstalling, then restoring developer version
-  conda develop -u .
-  pip install pygrin
-  pip uninstall pygrin
-  conda develop .
-
-# manually update release on github
+# manually update release at
+  https://github.com/scottprahl/pygrin
+  
+# check releases at pypi and readthedocs
+  https://pypi.org/project/pygrin/
+  https://pygrin.readthedocs.io

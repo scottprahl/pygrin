@@ -30,6 +30,6 @@ rcheck:
 	make html
 	check-manifest
 	pyroma -d .
-#	tox
+	tox
 
 .PHONY: clean check rcheck html
