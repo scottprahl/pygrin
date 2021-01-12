@@ -9,18 +9,18 @@ Usage
 
 Example Light paths in a 0.25 pitch GRIN lens from an ancient Melles Griot Catalog::
 
-    import pygrin as grin
+    import pygrin
     n = 1.608 
     gradient = 0.339 
     length = 5.37
     diameter = 1.8
     
-    pitch = grin.period(gradient, length)
-    ffl = grin.FFL(n,pitch,length)
-    efl = grin.EFL(n,pitch,length)
-    na = grin.NA(n,pitch,length,diameter)
+    pitch = pygrin.period(gradient, length)
+    ffl = pygrin.FFL(n,pitch,length)
+    efl = pygrin.EFL(n,pitch,length)
+    na = pygrin.NA(n,pitch,length,diameter)
 
-    angle = grin.max_angle(n,pitch,length,diameter)
+    angle = pygrin.max_angle(n,pitch,length,diameter)
     print('expected pitch = 0.29,            calculated %.2f' % pitch)
     print('expected FFL = 0.46 mm,           calculated %.2f' % ffl)
     print('expected NA = 0.46,               calculated %.2f' % na)
