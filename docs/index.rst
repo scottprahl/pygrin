@@ -1,14 +1,19 @@
 .. include:: ../README.rst
 
-Example Usage
-=============
 .. toctree::
-   :maxdepth: 2
-   :titlesonly:
+   :caption: Example Usage
+   :hidden:
 
    01-grin-lens-basics.ipynb
 
+.. toctree::
+   :caption: API
+   :hidden:
+
    pygrin
 
-.. include:: ../CHANGELOG.rst
+.. toctree::
+   :caption: Versions
+   :hidden:
 
+   changelog
