@@ -1,6 +1,23 @@
 pygrin
 ======
 
+.. image:: https://img.shields.io/pypi/v/pygrin.svg
+   :target: https://pypi.org/project/pygrin/
+
+.. image:: https://colab.research.google.com/assets/colab-badge.svg
+   :target: https://colab.research.google.com/github/scottprahl/pygrin/blob/master
+
+.. image:: https://img.shields.io/badge/readthedocs-latest-blue.svg
+   :target: https://pygrin.readthedocs.io
+
+.. image:: https://img.shields.io/badge/github-code-green.svg
+   :target: https://github.com/scottprahl/pygrin
+
+.. image:: https://img.shields.io/badge/MIT-license-yellow.svg
+   :target: https://github.com/scottprahl/pygrin/blob/master/LICENSE.txt
+
+__________
+
 A basic collection of routines to ray trace through graded
 index (GRIN) lenses with a parabolic radial profile.
 
