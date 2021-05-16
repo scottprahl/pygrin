@@ -3,14 +3,17 @@ SPHINXBUILD   ?= sphinx-build
 SOURCEDIR     = docs
 BUILDDIR      = docs/_build
 
-check:
+pycheck:
 	-pylint pygrin/pygrin.py
-	-pep257 --ignore D401 pygrin/pygrin.py
 	-pylint pygrin/__init__.py
+
+doccheck:
+	-pep257 --ignore D401 pygrin/pygrin.py
 	-pep257 pygrin/__init__.py
 
 html:
 	$(SPHINXBUILD) -b html "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS)
+	open docs/_build/index.html
 
 clean:
 	rm -rf dist
@@ -23,8 +26,16 @@ clean:
 	rm -rf .tox
 	rm -rf 
 
+notecheck:
+	make clean
+	pytest --verbose test_all_notebooks.py
+	rm -rf __pycache__
+
 rcheck:
 	make clean
+	make pycheck
+	make doccheck
+	make notecheck
 	touch docs/*ipynb
 	touch docs/*rst
 	make html
