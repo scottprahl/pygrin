@@ -8,8 +8,8 @@ pycheck:
 	-pylint pygrin/__init__.py
 
 doccheck:
-	-pep257 --ignore D401 pygrin/pygrin.py
-	-pep257 pygrin/__init__.py
+	-pydocstyle pygrin/pygrin.py
+	-pydocstyle pygrin/__init__.py
 
 html:
 	$(SPHINXBUILD) -b html "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS)
