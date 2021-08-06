@@ -24,6 +24,7 @@ clean:
 	rm -rf docs/_build/.doctrees
 	rm -rf docs/api/*
 	rm -rf .tox
+	rm -rf build
 	rm -rf 
 
 notecheck:

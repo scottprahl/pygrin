@@ -1,6 +1,12 @@
 Changelog
 =========
 
+v0.4.4
+------
+* create pure python packages
+* include .whl file
+* package as python3 only
+
 v0.4.3
 ------
 * improve help(pygrin)
