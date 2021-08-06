@@ -13,12 +13,12 @@ Releasing a new version
   git push
 
 # create release tag on github
-  git tag v0.3.0
-  git push origin v0.3.0
+  git tag v0.4.4
+  git push origin v0.4.4
 
-# upload source to pypi
+# create pure python package and upload to pypi
   rm -rf dist/*
-  python3 setup.py sdist
+  python3 -m build
   python3 -m twine upload dist/*
 
 # manually update release at
