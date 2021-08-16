@@ -22,8 +22,6 @@ Releasing a new version
   python3 -m twine upload dist/*
 
 # manually update release at
-  https://github.com/scottprahl/pygrin
-  
-# check releases at pypi and readthedocs
-  https://pypi.org/project/pygrin/
-  https://pygrin.readthedocs.io
+  open https://github.com/scottprahl/pygrin
+  open https://pypi.org/project/pygrin/
+  open https://pygrin.readthedocs.io
