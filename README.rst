@@ -1,6 +1,8 @@
 pygrin
 ======
 
+by Scott Prahl
+
 .. image:: https://img.shields.io/pypi/v/pygrin.svg
    :target: https://pypi.org/project/pygrin/
 
