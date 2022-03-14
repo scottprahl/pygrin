@@ -3,3 +3,4 @@ nbsphinx==0.8.5
 markupsafe==2.0.1
 sphinx-automodapi
 sphinx-rtd-theme
+pygrin
