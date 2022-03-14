@@ -19,10 +19,8 @@ clean:
 	rm -rf dist
 	rm -rf pygrin.egg-info
 	rm -rf pygrin/__pycache__
-	rm -rf docs/_build/*
-	rm -rf docs/_build/.buildinfo
-	rm -rf docs/_build/.doctrees
-	rm -rf docs/api/*
+	rm -rf docs/_build
+	rm -rf docs/api
 	rm -rf .tox
 	rm -rf build
 	rm -rf 

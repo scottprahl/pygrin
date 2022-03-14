@@ -1,5 +1,6 @@
 # pylint: disable=invalid-name
 # pylint: disable=too-many-arguments
+# pylint: disable=consider-using-f-string
 """
 Gradient Index lens calculations and plots.
 
@@ -7,7 +8,7 @@ More documentation at <https://pygrin.readthedocs.io>
 
 Typical usage::
 
-    import pygin
+    import pygrin
 
     length = 7               # mm
     diameter = 2             # mm
@@ -53,7 +54,7 @@ Functions to help raytrace through GRIN lens::
 
 import numpy as np
 import matplotlib.pyplot as plt
-import matplotlib.patches as patches
+from matplotlib import patches
 
 __all__ = ('ABCD',
            'BFL',
