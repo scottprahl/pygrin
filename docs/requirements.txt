@@ -1,3 +1,4 @@
+nbspinx
 sphinx-automodapi
 sphinx-rtd-theme
 pygrin
