@@ -15,8 +15,8 @@ by Scott Prahl
    :target: https://github.com/conda-forge/pygrin-feedstock
    :alt: conda
 
-.. image:: https://zenodo.org/badge/122556263.svg
-   :target: https://zenodo.org/badge/latestdoi/122556263
+.. image:: https://zenodo.org/badge/116033943.svg
+   :target: https://zenodo.org/badge/latestdoi/116033943
    :alt: doi  
 
 |
