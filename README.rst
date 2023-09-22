@@ -11,7 +11,7 @@ by Scott Prahl
    :target: https://github.com/scottprahl/pygrin
    :alt: github
 
-.. image:: https://img.shields.io/conda/vn/conda-forge/pygrin?label=conda
+.. image:: https://img.shields.io/conda/vn/conda-forge/pygrin?color=green
    :target: https://github.com/conda-forge/pygrin-feedstock
    :alt: conda
 
@@ -37,16 +37,6 @@ by Scott Prahl
    :target: https://pypi.org/project/pygrin/
    :alt: Downloads
 
-|
-
-.. image:: https://mybinder.org/badge_logo.svg
-   :target: https://mybinder.org/v2/gh/scottprahl/pygrin/master?filepath=docs
-   :alt: Binder
-   
-.. image:: https://colab.research.google.com/assets/colab-badge.svg
-   :target: https://colab.research.google.com/github/scottprahl/pygrin/blob/master
-   :alt: Colab
-
 __________
 
 A basic collection of routines to ray trace through graded
@@ -55,10 +45,10 @@ index (GRIN) lenses with a parabolic radial profile.
 .. image:: https://raw.githubusercontent.com/scottprahl/pygrin/master/docs/pitch.png
    :alt: full pitch lens
 
-Usage
------
+Example
+-------
 
-Example Light paths in a 0.25 pitch GRIN lens from an ancient Melles Griot Catalog::
+Properties of a 0.25 pitch GRIN lens from an ancient Melles Griot Catalog::
 
     import pygrin
     n = 1.608 
@@ -99,6 +89,12 @@ Use ``pip``::
 or ``conda``::
 
     conda install -c conda-forge pygrin
+
+or use directly in Google Colaboratory:
+
+.. image:: https://colab.research.google.com/assets/colab-badge.svg
+   :target: https://colab.research.google.com/github/scottprahl/pygrin/blob/master
+   :alt: Colab
 
 License
 -------
