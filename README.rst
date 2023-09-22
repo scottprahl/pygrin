@@ -90,8 +90,7 @@ or ``conda``::
 
     conda install -c conda-forge pygrin
 
-or use directly in Google Colaboratory:
-
+or click the Google Colaboratory button:
 .. image:: https://colab.research.google.com/assets/colab-badge.svg
    :target: https://colab.research.google.com/github/scottprahl/pygrin/blob/master
    :alt: Colab
