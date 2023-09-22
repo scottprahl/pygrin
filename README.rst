@@ -3,7 +3,7 @@ pygrin
 
 by Scott Prahl
 
-.. image:: https://img.shields.io/pypi/v/pygrin?logoColor=green
+.. image:: https://img.shields.io/pypi/v/pygrin?color=green
    :target: https://pypi.org/project/pygrin/
    :alt: pypi
 
