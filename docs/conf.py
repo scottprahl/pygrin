@@ -12,11 +12,11 @@ docstrings that follow the Google docstring format.
 
 `nbsphinx` convert the Jupyter notebooks to html with nbsphinx, will
 """
-
 import re
 import os.path
 
 project = 'pygrin'
+master_doc = 'index'
 
 def get_init_property(prop):
     """Return property from __init__.py."""
@@ -29,8 +29,7 @@ def get_init_property(prop):
 
 release = get_init_property("__version__")
 author = get_init_property("__author__")
-
-master_doc = 'index'
+copyright = get_init_property("__copyright__")
 
 # -- General configuration ---------------------------------------------------
 
@@ -45,7 +44,6 @@ extensions = [
 numpydoc_show_class_members = False
 napoleon_use_param = False
 napoleon_use_rtype = False
-napoleon_custom_sections = [('Returns', 'params_style')]
 
 # List of patterns, relative to source directory, of files to ignore
 exclude_patterns = ['_build',

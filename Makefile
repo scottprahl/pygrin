@@ -1,8 +1,3 @@
-SPHINXOPTS    ?=
-SPHINXBUILD   ?= sphinx-build
-SOURCEDIR     = docs
-BUILDDIR      = docs/_build
-
 pycheck:
 	-pylint pygrin/pygrin.py
 	-pylint pygrin/__init__.py
@@ -12,22 +7,22 @@ doccheck:
 	-pydocstyle pygrin/__init__.py
 
 html:
-	$(SPHINXBUILD) -b html "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS)
+	cd docs && python -m sphinx -T -E -b html -d _build/doctrees -D language=en . _build
 	open docs/_build/index.html
 
 clean:
+	rm -rf .pytest_cache
 	rm -rf dist
 	rm -rf pygrin.egg-info
 	rm -rf pygrin/__pycache__
 	rm -rf docs/_build
 	rm -rf docs/api
-	rm -rf .tox
+	rm -rf docs/.ipynb-checkpoints
 	rm -rf build
-	rm -rf 
 
 notecheck:
 	make clean
-	pytest --verbose test_all_notebooks.py
+	pytest --verbose tests/test_all_notebooks.py
 	rm -rf __pycache__
 
 rcheck:
@@ -40,6 +35,5 @@ rcheck:
 	make html
 	check-manifest
 	pyroma -d .
-	tox
 
 .PHONY: clean check rcheck html
