@@ -12,7 +12,7 @@ by Scott Prahl
    :alt: github
 
 .. image:: https://img.shields.io/conda/vn/conda-forge/pygrin?label=conda
-   :target: https://anaconda.org/conda-forge/pygrin
+   :target: https://github.com/conda-forge/pygrin-feedstock
    :alt: conda
 
 .. image:: https://zenodo.org/badge/122556263.svg
