@@ -12,13 +12,15 @@ html:
 
 clean:
 	rm -rf .pytest_cache
+	rm -rf .ruff_cache
+	rm -rf build
 	rm -rf dist
-	rm -rf pygrin.egg-info
-	rm -rf pygrin/__pycache__
 	rm -rf docs/_build
 	rm -rf docs/api
 	rm -rf docs/.ipynb-checkpoints
-	rm -rf build
+	rm -rf pygrin.egg-info
+	rm -rf pygrin/__pycache__
+	rm -rf tests/__pycache__
 
 notecheck:
 	make clean
