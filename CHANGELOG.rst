@@ -1,7 +1,11 @@
 Changelog
 =========
 
-v0.5.0
+0.5.1
+-----
+* fix inconsistent python requires
+
+0.5.0
 ------
 * no new features, just updating packaging
 * add conda-forge support
