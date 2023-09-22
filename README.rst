@@ -39,8 +39,8 @@ by Scott Prahl
 
 __________
 
-A basic collection of routines to ray trace through graded
-index (GRIN) lenses with a parabolic radial profile.
+A basic collection of routines to ray trace through graded index (GRIN) lenses with a
+parabolic radial profile.
 
 .. image:: https://raw.githubusercontent.com/scottprahl/pygrin/master/docs/pitch.png
    :alt: full pitch lens
@@ -90,11 +90,13 @@ or ``conda``::
 
     conda install -c conda-forge pygrin
 
-or click the Google Colaboratory button:
-.. image:: https://colab.research.google.com/assets/colab-badge.svg
-   :target: https://colab.research.google.com/github/scottprahl/pygrin/blob/master
-   :alt: Colab
+or click the :target:`Google Colaboratory button
+<https://colab.research.google.com/github/scottprahl/pygrin/blob/master>`::
+
+   .. image:: https://colab.research.google.com/assets/colab-badge.svg
+      :target: https://colab.research.google.com/github/scottprahl/pygrin/blob/master
+      :alt: Colab
 
 License
 -------
-pygrin is licensed under the terms of the MIT license.
+``pygrin`` is licensed under the terms of the MIT license.
