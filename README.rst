@@ -92,10 +92,13 @@ a GRIN lens.   For examples, see <https://pygrin.readthedocs.io>
 Installation
 ------------
 
-Source code is available at <https://github.com/scottprahl/pygrin> or the module
-can be installed using `pip`::
+Use ``pip``::
 
-    pip install --user pygrin
+    pip install pygrin
+
+or ``conda``::
+
+    conda install -c conda-forge pygrin
 
 License
 -------
