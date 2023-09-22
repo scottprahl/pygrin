@@ -21,7 +21,7 @@ clean:
 	rm -rf dist
 	rm -rf docs/_build
 	rm -rf docs/api
-	rm -rf docs/.ipynb-checkpoints
+	rm -rf docs/.ipynb_checkpoints
 	rm -rf pygrin.egg-info
 	rm -rf pygrin/__pycache__
 	rm -rf tests/__pycache__
