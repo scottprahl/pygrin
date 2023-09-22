@@ -1,3 +1,7 @@
+lint:
+	-ruff check .
+	-yamllint .github/workflows/*
+
 pycheck:
 	-pylint pygrin/pygrin.py
 	-pylint pygrin/__init__.py
@@ -22,20 +26,23 @@ clean:
 	rm -rf pygrin/__pycache__
 	rm -rf tests/__pycache__
 
-notecheck:
+test:
+	pytest --verbose tests/test_pygrin.py
+
+testall:
 	make clean
+	make test
 	pytest --verbose tests/test_all_notebooks.py
 	rm -rf __pycache__
 
 rcheck:
 	make clean
+	make testall
+	make lint
 	make pycheck
 	make doccheck
-	make notecheck
 	touch docs/*ipynb
 	touch docs/*rst
 	make html
 	check-manifest
 	pyroma -d .
-
-.PHONY: clean check rcheck html
