@@ -1,8 +1,4 @@
 include CHANGELOG.rst
-include LICENSE.txt
-exclude .gitignore
-exclude .readthedocs.yaml
-exclude release.txt
-exclude Makefile
-exclude docs/*
-exclude test_all_notebooks.py
+include CITATION.cff
+
+include tests/test_pygrin.py

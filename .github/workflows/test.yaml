@@ -33,4 +33,4 @@ jobs:
 
       - name: Tests
         run: |
-          pip check
+          pytest tests/test_pygrin.py

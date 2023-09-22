@@ -1,3 +1,17 @@
 [build-system]
 requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
+
+[tool.ruff]
+line-length = 100
+ignore = ["F403"]
+exclude =['.git', '__pycache__', 'docs']
+
+[tool.check-manifest]
+ignore = [
+    ".readthedocs.yaml",
+    "docs/*",
+    "Makefile",
+    "release.txt",
+    "requirements.txt",
+]
