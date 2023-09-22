@@ -90,12 +90,11 @@ or ``conda``::
 
     conda install -c conda-forge pygrin
 
-or click the :target:`Google Colaboratory button
-<https://colab.research.google.com/github/scottprahl/pygrin/blob/master>`::
+or click the button below
 
-   .. image:: https://colab.research.google.com/assets/colab-badge.svg
-      :target: https://colab.research.google.com/github/scottprahl/pygrin/blob/master
-      :alt: Colab
+.. image:: https://colab.research.google.com/assets/colab-badge.svg
+  :target: https://colab.research.google.com/github/scottprahl/pygrin/blob/master
+  :alt: Colab
 
 License
 -------
