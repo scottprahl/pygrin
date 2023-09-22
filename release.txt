@@ -1,7 +1,5 @@
 Releasing a new version
 
-# make sure all Jupyter notebooks in the docs folder still work
-
 # make sure things are not broken and that files match up
   make rcheck
   
@@ -12,16 +10,20 @@ Releasing a new version
   git commit CHANGELOG.txt -m 'update recent changes' 
   git push
 
+# verify that a local build works
+  python -m build
+
 # create release tag on github
   git tag v0.4.4
   git push origin v0.4.4
 
-# create pure python package and upload to pypi
-  rm -rf dist/*
-  python3 -m build
-  python3 -m twine upload dist/*
-
-# manually update release at
+# manually publish release at
   open https://github.com/scottprahl/pygrin
+  
+# verify action success
+  open https://zenodo.org/badge/latestdoi/122556263
   open https://pypi.org/project/pygrin/
   open https://pygrin.readthedocs.io
+  
+# wait for feedstock update
+  open https://github.com/conda-forge/pygrin-feedstock
