@@ -1,6 +1,14 @@
 Changelog
 =========
 
+v0.5.0
+------
+* no new features, just updating packaging
+* add conda-forge support
+* add zenodo DOI citation support
+* add github action workflows
+* add trivial test file
+
 v0.4.4
 ------
 * create pure python packages
