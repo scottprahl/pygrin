@@ -27,7 +27,7 @@ Functions to help raytrace through GRIN lens.
     meridional_curve(n_0, pitch, length, r_i, theta_i)
     plot_principal_planes(n_0, pitch, length, diameter)
 """
-__version__ = '0.5.1'
+__version__ = '0.5.2'
 __author__ = 'Scott Prahl'
 __email__ = 'scott.prahl@oit.edu'
 __copyright__ = '2018-23, Scott Prahl'

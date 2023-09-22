@@ -1,6 +1,10 @@
 Changelog
 =========
 
+0.5.2
+-----
+* trying to appease conda-forge
+
 0.5.1
 -----
 * fix inconsistent python requires
