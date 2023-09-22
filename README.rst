@@ -3,20 +3,49 @@ pygrin
 
 by Scott Prahl
 
-.. image:: https://img.shields.io/pypi/v/pygrin.svg
+.. image:: https://img.shields.io/pypi/v/pygrin?logoColor=green
    :target: https://pypi.org/project/pygrin/
+   :alt: pypi
 
+.. image:: https://img.shields.io/github/v/tag/scottprahl/pygrin?label=github&color=green
+   :target: https://github.com/scottprahl/pygrin
+   :alt: github
+
+.. image:: https://img.shields.io/conda/vn/conda-forge/pygrin?label=conda
+   :target: https://anaconda.org/conda-forge/pygrin
+   :alt: conda
+
+.. image:: https://zenodo.org/badge/122556263.svg
+   :target: https://zenodo.org/badge/latestdoi/122556263
+   :alt: doi  
+
+|
+
+.. image:: https://img.shields.io/github/license/scottprahl/pygrin
+   :target: https://github.com/scottprahl/pygrin/blob/master/LICENSE.txt
+   :alt: License
+
+.. image:: https://github.com/scottprahl/pygrin/actions/workflows/test.yaml/badge.svg
+   :target: https://github.com/scottprahl/pygrin/actions/workflows/test.yaml
+   :alt: Testing
+
+.. image:: https://readthedocs.org/projects/pygrin/badge
+   :target: https://pygrin.readthedocs.io
+   :alt: Docs
+
+.. image:: https://img.shields.io/pypi/dm/pygrin
+   :target: https://pypi.org/project/pygrin/
+   :alt: Downloads
+
+|
+
+.. image:: https://mybinder.org/badge_logo.svg
+   :target: https://mybinder.org/v2/gh/scottprahl/pygrin/master?filepath=docs
+   :alt: Binder
+   
 .. image:: https://colab.research.google.com/assets/colab-badge.svg
    :target: https://colab.research.google.com/github/scottprahl/pygrin/blob/master
-
-.. image:: https://img.shields.io/badge/readthedocs-latest-blue.svg
-   :target: https://pygrin.readthedocs.io
-
-.. image:: https://img.shields.io/badge/github-code-green.svg
-   :target: https://github.com/scottprahl/pygrin
-
-.. image:: https://img.shields.io/badge/MIT-license-yellow.svg
-   :target: https://github.com/scottprahl/pygrin/blob/master/LICENSE.txt
+   :alt: Colab
 
 __________
 
