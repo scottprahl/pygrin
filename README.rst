@@ -52,6 +52,9 @@ __________
 A basic collection of routines to ray trace through graded
 index (GRIN) lenses with a parabolic radial profile.
 
+.. image:: https://raw.githubusercontent.com/scottprahl/pygrin/master/docs/pitch.png
+   :alt: full pitch lens
+
 Usage
 -----
 
