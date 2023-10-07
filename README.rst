@@ -3,15 +3,15 @@ pygrin
 
 by Scott Prahl
 
-.. image:: https://img.shields.io/pypi/v/pygrin?color=green
+.. image:: https://img.shields.io/pypi/v/pygrin?color=68CA66
    :target: https://pypi.org/project/pygrin/
    :alt: pypi
 
-.. image:: https://img.shields.io/github/v/tag/scottprahl/pygrin?label=github&color=green
+.. image:: https://img.shields.io/github/v/tag/scottprahl/pygrin?label=github&color=68CA66
    :target: https://github.com/scottprahl/pygrin
    :alt: github
 
-.. image:: https://img.shields.io/conda/vn/conda-forge/pygrin?color=green
+.. image:: https://img.shields.io/conda/vn/conda-forge/pygrin?label=conda&color=68CA66
    :target: https://github.com/conda-forge/pygrin-feedstock
    :alt: conda
 
@@ -21,7 +21,7 @@ by Scott Prahl
 
 |
 
-.. image:: https://img.shields.io/github/license/scottprahl/pygrin
+.. image:: https://img.shields.io/github/license/scottprahl/pygrin?color=68CA66
    :target: https://github.com/scottprahl/pygrin/blob/master/LICENSE.txt
    :alt: License
 
@@ -29,11 +29,11 @@ by Scott Prahl
    :target: https://github.com/scottprahl/pygrin/actions/workflows/test.yaml
    :alt: Testing
 
-.. image:: https://readthedocs.org/projects/pygrin/badge
+.. image:: https://readthedocs.org/projects/pygrin/badge?color=68CA66
    :target: https://pygrin.readthedocs.io
    :alt: Docs
 
-.. image:: https://img.shields.io/pypi/dm/pygrin
+.. image:: https://img.shields.io/pypi/dm/pygrin?color=68CA66
    :target: https://pypi.org/project/pygrin/
    :alt: Downloads
 
