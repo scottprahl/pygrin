@@ -1,3 +1,4 @@
+"""Script for pygrin module."""
 import re
 import os.path
 from setuptools import setup
