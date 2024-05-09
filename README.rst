@@ -22,7 +22,7 @@ by Scott Prahl
 |
 
 .. image:: https://img.shields.io/github/license/scottprahl/pygrin?color=68CA66
-   :target: https://github.com/scottprahl/pygrin/blob/master/LICENSE.txt
+   :target: https://github.com/scottprahl/pygrin/blob/main/LICENSE.txt
    :alt: License
 
 .. image:: https://github.com/scottprahl/pygrin/actions/workflows/test.yaml/badge.svg
@@ -42,7 +42,7 @@ __________
 A basic collection of routines to ray trace through graded index (GRIN) lenses with a
 parabolic radial profile.
 
-.. image:: https://raw.githubusercontent.com/scottprahl/pygrin/master/docs/pitch.png
+.. image:: https://raw.githubusercontent.com/scottprahl/pygrin/main/docs/pitch.png
    :alt: full pitch lens
 
 Example
@@ -93,7 +93,7 @@ or ``conda``::
 or use immediately by clicking the Google Colaboratory button below
 
 .. image:: https://colab.research.google.com/assets/colab-badge.svg
-  :target: https://colab.research.google.com/github/scottprahl/pygrin/blob/master
+  :target: https://colab.research.google.com/github/scottprahl/pygrin/blob/main
   :alt: Colab
 
 License
