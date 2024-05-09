@@ -1,43 +1,43 @@
+.. |pypi| image:: https://img.shields.io/pypi/v/pygrin?color=68CA66
+   :target: https://pypi.org/project/pygrin/
+   :alt: pypi
+
+.. |github| image:: https://img.shields.io/github/v/tag/scottprahl/pygrin?label=github&color=68CA66
+   :target: https://github.com/scottprahl/pygrin
+   :alt: github
+
+.. |conda| image:: https://img.shields.io/conda/vn/conda-forge/pygrin?label=conda&color=68CA66
+   :target: https://github.com/conda-forge/pygrin-feedstock
+   :alt: conda
+
+.. |doi| image:: https://zenodo.org/badge/116033943.svg
+   :target: https://zenodo.org/badge/latestdoi/116033943
+   :alt: doi  
+
+.. |license| image:: https://img.shields.io/github/license/scottprahl/pygrin?color=68CA66
+   :target: https://github.com/scottprahl/pygrin/blob/main/LICENSE.txt
+   :alt: License
+
+.. |test| image:: https://github.com/scottprahl/pygrin/actions/workflows/test.yaml/badge.svg
+   :target: https://github.com/scottprahl/pygrin/actions/workflows/test.yaml
+   :alt: Testing
+
+.. |docs| image:: https://readthedocs.org/projects/pygrin/badge?color=68CA66
+   :target: https://pygrin.readthedocs.io
+   :alt: Docs
+
+.. |downloads| image:: https://img.shields.io/pypi/dm/pygrin?color=68CA66
+   :target: https://pypi.org/project/pygrin/
+   :alt: Downloads
+
 pygrin
 ======
 
 by Scott Prahl
 
-.. image:: https://img.shields.io/pypi/v/pygrin?color=68CA66
-   :target: https://pypi.org/project/pygrin/
-   :alt: pypi
+|pypi| |github| |conda| |doi|
 
-.. image:: https://img.shields.io/github/v/tag/scottprahl/pygrin?label=github&color=68CA66
-   :target: https://github.com/scottprahl/pygrin
-   :alt: github
-
-.. image:: https://img.shields.io/conda/vn/conda-forge/pygrin?label=conda&color=68CA66
-   :target: https://github.com/conda-forge/pygrin-feedstock
-   :alt: conda
-
-.. image:: https://zenodo.org/badge/116033943.svg
-   :target: https://zenodo.org/badge/latestdoi/116033943
-   :alt: doi  
-
-|
-
-.. image:: https://img.shields.io/github/license/scottprahl/pygrin?color=68CA66
-   :target: https://github.com/scottprahl/pygrin/blob/main/LICENSE.txt
-   :alt: License
-
-.. image:: https://github.com/scottprahl/pygrin/actions/workflows/test.yaml/badge.svg
-   :target: https://github.com/scottprahl/pygrin/actions/workflows/test.yaml
-   :alt: Testing
-
-.. image:: https://readthedocs.org/projects/pygrin/badge?color=68CA66
-   :target: https://pygrin.readthedocs.io
-   :alt: Docs
-
-.. image:: https://img.shields.io/pypi/dm/pygrin?color=68CA66
-   :target: https://pypi.org/project/pygrin/
-   :alt: Downloads
-
-__________
+|license| |test| |docs| |downloads|
 
 A basic collection of routines to ray trace through graded index (GRIN) lenses with a
 parabolic radial profile.
