@@ -2,6 +2,7 @@ Releasing a new version
 
 # make sure things are not broken and that files match up
   make rcheck
+  python -m build
   
 # update the version in setup.cfg and docs/conf.py
   git commit setup.cfg docs/conf.py -m 'update version'
@@ -9,9 +10,6 @@ Releasing a new version
 # update CHANGELOG.txt  `git shortlog v0.4.1..HEAD`
   git commit CHANGELOG.txt -m 'update recent changes' 
   git push
-
-# verify that a local build works
-  python -m build
 
 # create release tag on github
   git tag v0.4.4
