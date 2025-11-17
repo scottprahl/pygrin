@@ -2,24 +2,25 @@ Releasing a new version
 
 # make sure things are not broken and that files match up
   make rcheck
-  python -m build
-  
-# update the version in setup.cfg and docs/conf.py
-  git commit setup.cfg docs/conf.py -m 'update version'
 
-# update CHANGELOG.txt  `git shortlog v0.4.1..HEAD`
-  git commit CHANGELOG.txt -m 'update recent changes' 
+# deploy new version to github
+  make lite-deploy
+
+# update the version in __init__.py and pyproject.toml
+  git commit pygrin/__init__.py pyproject.toml -m 'update version'
+
+# update CHANGELOG.txt  `git shortlog v0.5.0..HEAD`
+  git commit -m 'update recent changes' CHANGELOG.txt
   git push
 
 # create release tag on github
-  git tag v0.4.4
-  git push origin v0.4.4
+  git tag 0.6.0
+  git push origin 0.6.0
 
 # manually publish release at
   open https://github.com/scottprahl/pygrin
   
 # verify action success
-  open https://zenodo.org/badge/latestdoi/122556263
   open https://pypi.org/project/pygrin/
   open https://pygrin.readthedocs.io
   
