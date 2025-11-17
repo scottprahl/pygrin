@@ -1,11 +1,21 @@
-authors:
-- family-names: Prahl
-  given-names: Scott
-  orcid: https://orcid.org/0000-0003-1468-6851
 cff-version: 1.2.0
-date-released: '2023-09-22'
-doi: 10.5281/zenodo.8370822
-message: If you use this software, please cite it as below.
-title: 'pygrin: a python module to ray trace through gradient index (GRIN) lenses'
-url: https://zenodo.org/badge/latestdoi/116033943
-version: 0.5.1
+title: "pygrin: A Python module for ray tracing through gradient-index (GRIN) lenses"
+version: "0.5.1"
+doi: "10.5281/zenodo.8370822"
+date-released: "2023-09-22"
+url: "https://github.com/scottprahl/pygrin"
+
+authors:
+  - family-names: "Prahl"
+    given-names: "Scott"
+    orcid: "https://orcid.org/0000-0003-1468-6851"
+
+message: >
+  If you use this software in academic work, please cite this reference.
+
+keywords:
+  - ray tracing
+  - GRIN lenses
+  - pitch
+  - SELFOC
+  - Graded Index
