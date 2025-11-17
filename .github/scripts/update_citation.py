@@ -1,9 +1,11 @@
-"""Update version and date in CITATION.cff based on the latest GitHub release."""
+"""Update CITATION.cff and README.rst citation block from latest GitHub release."""
 
 from __future__ import annotations
 
+import re
 import requests
 import yaml
+from pathlib import Path
 
 # Replace with your username and repo name
 USERNAME = "scottprahl"
@@ -17,7 +19,9 @@ HEADERS = {
     "Accept": "application/vnd.github+json",
 }
 
-# Fetch latest release information with timeout and user-agent
+# --------------------------------------------------------------------
+# Fetch latest release info from GitHub
+# --------------------------------------------------------------------
 response = requests.get(
     GITHUB_API_URL,
     timeout=10,
@@ -26,28 +30,93 @@ response = requests.get(
 response.raise_for_status()
 
 release_info = response.json()
-release_date = release_info["published_at"].split("T")[0]
-version = release_info["tag_name"]
+release_date = release_info["published_at"].split("T")[0]  # e.g. "2025-11-17"
+tag_version = release_info["tag_name"]                      # e.g. "v0.5.1" or "0.5.1"
 
-# Read existing CITATION.cff
-with open("CITATION.cff", "r", encoding="utf-8") as f:
-    cff_data = yaml.safe_load(f)
+# Normalize version: strip leading "v" if present
+version = tag_version.lstrip("v")
+year = release_date.split("-")[0]
 
-changed = False
+# --------------------------------------------------------------------
+# Update CITATION.cff
+# --------------------------------------------------------------------
+citation_path = Path("CITATION.cff")
+if citation_path.exists():
+    with citation_path.open("r", encoding="utf-8") as f:
+        cff_data = yaml.safe_load(f)
 
-# Apply updates only if different
-if cff_data.get("date-released") != release_date:
-    cff_data["date-released"] = release_date
-    changed = True
+    cff_changed = False
 
-if cff_data.get("version") != version:
-    cff_data["version"] = version
-    changed = True
+    if cff_data.get("date-released") != release_date:
+        cff_data["date-released"] = release_date
+        cff_changed = True
 
-# Save only if modified
-if changed:
-    with open("CITATION.cff", "w", encoding="utf-8") as f:
-        yaml.dump(cff_data, f)
-    print(f"CITATION.cff updated → version: {version}, date: {release_date}")
+    if cff_data.get("version") != version:
+        cff_data["version"] = version
+        cff_changed = True
+
+    if cff_changed:
+        with citation_path.open("w", encoding="utf-8") as f:
+            yaml.dump(cff_data, f, sort_keys=False)
+        print(f"CITATION.cff updated → version: {version}, date: {release_date}")
+    else:
+        print("CITATION.cff: no change in release date or version.")
 else:
-    print("No change in release date or version. No update needed.")
+    print("CITATION.cff not found; skipping CITATION.cff update.")
+
+# --------------------------------------------------------------------
+# Update citation block in README.rst
+# --------------------------------------------------------------------
+readme_path = Path("README.rst")
+if not readme_path.exists():
+    print("README.rst not found; skipping README citation update.")
+else:
+    text = readme_path.read_text(encoding="utf-8")
+    original_text = text
+
+    # 1. Prose citation line:
+    #    Prahl, S. (2023). *pygrin: ...* (Version 0.5.1) [Computer software]. Zenodo. https://doi.org/...
+    #
+    # Update the year in "Prahl, S. (YYYY)."
+    text = re.sub(
+        r"(Prahl,\s*S\.\s*\()\d{4}(\)\.)",
+        rf"\1{year}\2",
+        text,
+    )
+
+    # Update "(Version X.Y.Z)" in the prose citation
+    text = re.sub(
+        r"\(Version [^)]+\)",
+        f"(Version {version})",
+        text,
+    )
+
+    # 2. BibTeX key:
+    #    @software{pygrin_prahl_2023,
+    text = re.sub(
+        r"(@software\{pygrin_prahl_)\d{4}(\s*,)",
+        rf"\1{year}\2",
+        text,
+    )
+
+    # 3. BibTeX year field:
+    #    year      = {2023},
+    text = re.sub(
+        r"(year\s*=\s*\{)\d{4}(\s*\},)",
+        rf"\1{year}\2",
+        text,
+    )
+
+    # 4. BibTeX version field:
+    #    version   = {0.5.1},
+    text = re.sub(
+        r"(version\s*=\s*\{)[^}]+(\s*\},)",
+        rf"\1{version}\2",
+        text,
+    )
+
+    if text != original_text:
+        readme_path.write_text(text, encoding="utf-8")
+        print(f"README.rst citation block updated → version: {version}, year: {year}")
+    else:
+        print("README.rst citation block already up to date.")
