@@ -1,6 +1,13 @@
 Changelog
 =========
 
+0.6.0
+-----
+* support jupyterlite
+* eliminate setup.cfg and setup.py
+* use black for formatting
+* update README
+
 0.5.1
 -----
 * fix inconsistent python requires
@@ -48,7 +55,7 @@ v0.2.0
 * add `hyperbolic_secant_profile_index`
 * fix importing, update for new names
 
-v0.2.0
+v0.1.0
 ------
 * fix typos
 * change status to alpha
