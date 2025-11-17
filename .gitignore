@@ -8,3 +8,7 @@ docs/api/
 dist/
 .tox/
 .venv/
+.cache/
+.jupyterlite.doit.db
+.lite_src/
+_site/
