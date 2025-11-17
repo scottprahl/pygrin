@@ -1,4 +1,5 @@
 """Script to update citation date and version."""
+
 import json
 import requests
 import yaml

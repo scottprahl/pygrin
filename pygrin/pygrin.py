@@ -56,23 +56,24 @@ import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib import patches
 
-__all__ = ('ABCD',
-           'BFL',
-           'EFL',
-           'FFL',
-           'NA',
-           'cardinal_points',
-           'full_meridional_curve',
-           'gradient',
-           'hyperbolic_secant_profile_index',
-           'image_distance',
-           'image_mag',
-           'max_angle',
-           'meridional_curve',
-           'parabolic_profile_index',
-           'period',
-           'plot_principal_planes',
-           )
+__all__ = (
+    "ABCD",
+    "BFL",
+    "EFL",
+    "FFL",
+    "NA",
+    "cardinal_points",
+    "full_meridional_curve",
+    "gradient",
+    "hyperbolic_secant_profile_index",
+    "image_distance",
+    "image_mag",
+    "max_angle",
+    "meridional_curve",
+    "parabolic_profile_index",
+    "period",
+    "plot_principal_planes",
+)
 
 
 def gradient(pitch, length):
@@ -116,7 +117,7 @@ def parabolic_profile_index(n_0, pitch, length, r):
     Returns:
         float: the index of a parabolic grin lens at r [unitless]
     """
-    return n_0 * (1 - 2 * (np.pi * pitch * r / length)**2)
+    return n_0 * (1 - 2 * (np.pi * pitch * r / length) ** 2)
 
 
 def hyperbolic_secant_profile_index(n_0, alpha, r):
@@ -131,7 +132,7 @@ def hyperbolic_secant_profile_index(n_0, alpha, r):
     Returns:
         float: the index of a parabolic grin lens at r [unitless]
     """
-    return np.sqrt(1 + (n_0**2 - 1.0)/np.cosh(alpha*r)**2)
+    return np.sqrt(1 + (n_0**2 - 1.0) / np.cosh(alpha * r) ** 2)
 
 
 def EFL(n_0, pitch, length):
@@ -192,7 +193,7 @@ def max_angle(n_0, pitch, length, diameter):
     Returns:
         float: the maximum acceptance angle of the lens in air [radians]
     """
-    return n_0 * np.sqrt(1 - np.cosh(diameter * pitch * np.pi / length)**-2)
+    return n_0 * np.sqrt(1 - np.cosh(diameter * pitch * np.pi / length) ** -2)
 
 
 def NA(n_0, pitch, length, diameter):
@@ -360,8 +361,7 @@ def full_meridional_curve(n_0, pitch, length, z_obj, r_obj, r_lens, npoints=40):
     n_lens = parabolic_profile_index(n_0, pitch, length, r_lens)
     theta_lens = np.arcsin(np.sin(theta_i) / n_lens)
 
-    z, r = meridional_curve(n_0, pitch, length, r_lens,
-                            theta_lens, npoints=npoints - 2)
+    z, r = meridional_curve(n_0, pitch, length, r_lens, theta_lens, npoints=npoints - 2)
 
     # insert point at top of object
     z = np.insert(z, 0, z_obj)
@@ -389,26 +389,25 @@ def plot_principal_planes(n_0, pitch, length, diameter):
     FF, FL, FPP, SPP, SL, BF = cardinal_points(n_0, pitch, length)
     radius = diameter / 2
 
-    rect = patches.Rectangle((FL, -radius), length,
-                             diameter, lw=0, facecolor='lightgray', alpha=0.3)
+    rect = patches.Rectangle((FL, -radius), length, diameter, lw=0, facecolor="lightgray", alpha=0.3)
 
     plt.axes().add_patch(rect)
-    plt.plot([FL, SL], [0, 0], lw=0.5, color='black')
+    plt.plot([FL, SL], [0, 0], lw=0.5, color="black")
 
     if np.abs(FPP) < 10 * length:
-        plt.plot([FPP, FPP], [-radius, radius], ':k')
-        plt.annotate('H ', xy=(FPP, -radius), ha='right', fontsize=16)
+        plt.plot([FPP, FPP], [-radius, radius], ":k")
+        plt.annotate("H ", xy=(FPP, -radius), ha="right", fontsize=16)
 
     if np.abs(SPP) < 10 * length:
-        plt.plot([SPP, SPP], [-radius, radius], ':k')
-        plt.annotate(" H'", xy=(SPP, -radius), ha='left', fontsize=16)
+        plt.plot([SPP, SPP], [-radius, radius], ":k")
+        plt.annotate(" H'", xy=(SPP, -radius), ha="left", fontsize=16)
 
     if np.abs(FF) < 10 * length:
-        plt.scatter([FF], [0], s=50, color='black')
-        plt.annotate('f ', xy=(FF, 0), ha='right', fontsize=16)
+        plt.scatter([FF], [0], s=50, color="black")
+        plt.annotate("f ", xy=(FF, 0), ha="right", fontsize=16)
 
     if np.abs(BF) < 10 * length:
-        plt.scatter([BF], [0], s=50, color='black')
-        plt.annotate(" f'", xy=(BF, 0), ha='left', fontsize=16)
+        plt.scatter([BF], [0], s=50, color="black")
+        plt.annotate(" f'", xy=(BF, 0), ha="left", fontsize=16)
 
-    plt.title(r'pitch=%.2f, n$_0$=%.3f' % (pitch, n_0))
+    plt.title(r"pitch=%.2f, n$_0$=%.3f" % (pitch, n_0))
