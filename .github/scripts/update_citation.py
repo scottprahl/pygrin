@@ -31,7 +31,7 @@ response.raise_for_status()
 
 release_info = response.json()
 release_date = release_info["published_at"].split("T")[0]  # e.g. "2025-11-17"
-tag_version = release_info["tag_name"]                      # e.g. "v0.5.1" or "0.5.1"
+tag_version = release_info["tag_name"]                      # e.g. "v0.6.0" or "0.6.0"
 
 # Normalize version: strip leading "v" if present
 version = tag_version.lstrip("v")
@@ -76,11 +76,10 @@ else:
 
     # 1. Prose citation line:
     #    Prahl, S. (2023). *pygrin: ...* (Version 0.5.1) [Computer software]. Zenodo. https://doi.org/...
-    #
     # Update the year in "Prahl, S. (YYYY)."
     text = re.sub(
-        r"(Prahl,\s*S\.\s*\()\d{4}(\)\.)",
-        rf"\1{year}\2",
+        r"(Prahl,\s*S\.\s*\()(\d{4})(\)\.)",
+        lambda m: f"{m.group(1)}{year}{m.group(3)}",
         text,
     )
 
@@ -94,24 +93,24 @@ else:
     # 2. BibTeX key:
     #    @software{pygrin_prahl_2023,
     text = re.sub(
-        r"(@software\{pygrin_prahl_)\d{4}(\s*,)",
-        rf"\1{year}\2",
+        r"(@software\{pygrin_prahl_)(\d{4})(\s*,)",
+        lambda m: f"{m.group(1)}{year}{m.group(3)}",
         text,
     )
 
     # 3. BibTeX year field:
     #    year      = {2023},
     text = re.sub(
-        r"(year\s*=\s*\{)\d{4}(\s*\},)",
-        rf"\1{year}\2",
+        r"(year\s*=\s*\{)(\d{4})(\s*\},)",
+        lambda m: f"{m.group(1)}{year}{m.group(3)}",
         text,
     )
 
     # 4. BibTeX version field:
     #    version   = {0.5.1},
     text = re.sub(
-        r"(version\s*=\s*\{)[^}]+(\s*\},)",
-        rf"\1{version}\2",
+        r"(version\s*=\s*\{)([^}]+)(\s*\},)",
+        lambda m: f"{m.group(1)}{version}{m.group(3)}",
         text,
     )
 
