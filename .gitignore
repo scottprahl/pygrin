@@ -12,3 +12,4 @@ dist/
 .jupyterlite.doit.db
 .lite_src/
 _site/
+.gh_pages/
