@@ -103,7 +103,7 @@ Citation
 
 If you use ``pygrin`` in academic or technical work, please cite:
 
-Prahl, S. (2025). *pygrin: A Python module for ray tracing through gradient-index (GRIN) lenses* (Version 0.6.0) [Computer software]. Zenodo. https://doi.org/10.5281/zenodo.8370822
+Prahl, S. (2025). *pygrin: A Python module for ray tracing through gradient-index (GRIN) lenses* (Version 0.6.0) [Computer software]. Zenodo. https://doi.org/10.5281/zenodo.8370821
 
 BibTeX
 ~~~~~~
@@ -115,7 +115,7 @@ BibTeX
      title     = {pygrin: A Python module for ray tracing through gradient-index (GRIN) lenses},
      year      = {2025},
      version   = {0.6.0},
-     doi       = {10.5281/zenodo.8370822},
+     doi       = {10.5281/zenodo.8370821},
      url       = {https://github.com/scottprahl/pygrin},
      publisher = {Zenodo}
    }
