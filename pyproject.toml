@@ -14,7 +14,7 @@ authors = [
 description = "Gradient Index (GRIN) Lens Calculations"
 keywords = ["endoscope", "pitch", "SELFOC", "Graded Index"]
 readme = "README.rst"
-license = "BSD-3-Clause"
+license = "MIT"
 dependencies = [
     "matplotlib",
     "numpy",
