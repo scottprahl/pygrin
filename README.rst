@@ -94,11 +94,9 @@ or ``conda``::
 
     conda install -c conda-forge pygrin
 
-or use immediately by clicking the Google Colaboratory button below
+or use immediately in your browser via the JupyterLite button below
 
-.. image:: https://colab.research.google.com/assets/colab-badge.svg
-  :target: https://colab.research.google.com/github/scottprahl/pygrin/blob/main
-  :alt: Colab
+    |lite|
 
 Citation
 --------
