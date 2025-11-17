@@ -124,7 +124,7 @@ lint: pylint-check
 pylint-check: $(VENV)/.ready
 	-@$(PYLINT) pygrin/__init__.py
 	-@$(PYLINT) pygrin/pygrin.py
-	-@$(PYLINT) tests/test_basics.py
+	-@$(PYLINT) tests/test_pygrin.py
 	-@$(PYLINT) tests/test_all_notebooks.py
 	-@$(PYLINT) .github/scripts/update_citation.py
 
@@ -205,7 +205,6 @@ lite: $(VENV)/.ready
 	else \
 		echo "⚠️  No notebooks found in docs/"; \
 	fi
-	@/bin/cp docs/speckle.png "$(STAGE_DIR)"
 
 	@echo "==> Building JupyterLite"
 	@"$(PYTHON)" -m jupyter lite build \
