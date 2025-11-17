@@ -1,0 +1,29 @@
+{
+  "content": [
+    {
+      "content": null,
+      "created": "2025-11-17T18:47:29.475844Z",
+      "format": null,
+      "hash": null,
+      "hash_algorithm": null,
+      "last_modified": "2025-11-17T18:47:27.614633Z",
+      "mimetype": null,
+      "name": "01-grin-lens-basics.ipynb",
+      "path": "01-grin-lens-basics.ipynb",
+      "size": 21845,
+      "type": "notebook",
+      "writable": true
+    }
+  ],
+  "created": "2025-11-17T18:47:29.475718Z",
+  "format": "json",
+  "hash": null,
+  "hash_algorithm": null,
+  "last_modified": "2025-11-17T18:47:29.475718Z",
+  "mimetype": null,
+  "name": "",
+  "path": "",
+  "size": null,
+  "type": "directory",
+  "writable": true
+}
