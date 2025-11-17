@@ -15,7 +15,7 @@ jobs:
 
     strategy:
       matrix:
-        python-version: ['3.7', '3.12']
+        python-version: ['3.9', '3.12']
 
     steps:
       - name: Checkout code
@@ -28,7 +28,8 @@ jobs:
 
       - name: Install package and dependencies
         run: |
-          pip install -r requirements.txt
+          pip install pytest
+          pip install numpy
           pip install -e .  # current package in editable mode
 
       - name: Tests
