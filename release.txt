@@ -3,15 +3,17 @@ Releasing a new version
 # make sure things are not broken and that files match up
   make rcheck
 
-# deploy new version to github
-  make lite-deploy
-
 # update the version in __init__.py and pyproject.toml
   git commit pygrin/__init__.py pyproject.toml -m 'update version'
 
 # update CHANGELOG.txt  `git shortlog v0.5.0..HEAD`
   git commit -m 'update recent changes' CHANGELOG.txt
   git push
+
+# deploy JupyterLite files
+  make realclean
+  make lite
+  make lite-deploy
 
 # create release tag on github
   git tag 0.6.0

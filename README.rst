@@ -10,8 +10,8 @@
    :target: https://github.com/conda-forge/pygrin-feedstock
    :alt: conda
 
-.. |doi| image:: https://zenodo.org/badge/116033943.svg
-   :target: https://zenodo.org/badge/latestdoi/116033943
+.. |doi-badge| image:: https://zenodo.org/badge/DOI/10.5281/zenodo.8370821.svg
+   :target: https://doi.org/10.5281/zenodo.8370821
    :alt: doi  
 
 .. |license| image:: https://img.shields.io/github/license/scottprahl/pygrin?color=68CA66

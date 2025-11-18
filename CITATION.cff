@@ -1,19 +1,39 @@
 cff-version: 1.2.0
+message: If you use this software, please cite it as below.
 title: 'pygrin: A Python module for ray tracing through gradient-index (GRIN) lenses'
 version: 0.6.0
-doi: 10.5281/zenodo.8370821
 date-released: '2025-11-17'
-url: https://github.com/scottprahl/pygrin
+doi: 10.5281/zenodo.8370821
+url: https://doi.org/10.5281/zenodo.8370821
+repository-code: https://github.com/scottprahl/pygrin
+license: MIT
+type: software
+
 authors:
 - family-names: Prahl
   given-names: Scott
   orcid: https://orcid.org/0000-0003-1468-6851
-message: 'If you use this software in academic work, please cite this reference.
 
-  '
+abstract: 'pygrin is a Python library for modeling and ray tracing optical systems 
+  containing gradient-index (GRIN) media. It supports classical pitch-based lens 
+  definitions including SELFOC-style geometries and variable refractive index fields
+  for simulation, education, and optical design research.'
+
 keywords:
 - ray tracing
 - GRIN lenses
 - pitch
 - SELFOC
-- Graded Index
+- graded index optics
+
+preferred-citation:
+  type: software
+  authors:
+  - family-names: Prahl
+    given-names: Scott
+    orcid: https://orcid.org/0000-0003-1468-6851
+  title: 'pygrin: A Python module for ray tracing through gradient-index (GRIN) lenses'
+  year: 2025
+  version: 0.6.0
+  doi: 10.5281/zenodo.8370821
+  url: https://doi.org/10.5281/zenodo.8370821
