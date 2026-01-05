@@ -29,7 +29,6 @@ jobs:
       - name: Install package and dependencies
         run: |
           pip install pytest
-          pip install numpy
           pip install -e .  # current package in editable mode
 
       - name: Tests
