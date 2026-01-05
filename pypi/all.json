@@ -1,24 +1,24 @@
 {
   "pygrin": {
     "releases": {
-      "0.6.0": [
+      "0.6.1": [
         {
           "comment_text": "",
           "digests": {
-            "md5": "b77fa810929fb1da9a1668a67d91eadd",
-            "sha256": "b0796b62cca78ac12f900173e97ac13b832d01a57ecbef73f4af13eed8f59a5a"
+            "md5": "602a9561c1df95fa35c0dffd1793ba29",
+            "sha256": "c450ba4e3954850cc9c305707f50041c64e345be80fa1458d24d19894518ef55"
           },
           "downloads": -1,
-          "filename": "pygrin-0.6.0-py3-none-any.whl",
+          "filename": "pygrin-0.6.1-py3-none-any.whl",
           "has_sig": false,
-          "md5_digest": "b77fa810929fb1da9a1668a67d91eadd",
+          "md5_digest": "602a9561c1df95fa35c0dffd1793ba29",
           "packagetype": "bdist_wheel",
           "python_version": "py3",
           "requires_python": ">=3.9",
-          "size": 6809,
-          "upload_time": "2025-11-17T19:26:27.225416Z",
-          "upload_time_iso_8601": "2025-11-17T19:26:27.225416Z",
-          "url": "./pygrin-0.6.0-py3-none-any.whl",
+          "size": 7242,
+          "upload_time": "2026-01-05T15:54:04.950940Z",
+          "upload_time_iso_8601": "2026-01-05T15:54:04.950940Z",
+          "url": "./pygrin-0.6.1-py3-none-any.whl",
           "yanked": false,
           "yanked_reason": null
         }
