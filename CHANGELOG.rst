@@ -8,6 +8,7 @@ Changelog
 * update readthedocs configuration
 * update github action to publish to pypi
 * fix pylint warnings in update_citation.py
+* update zenodo url
 
 0.6.0
 -----
