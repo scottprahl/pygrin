@@ -5,9 +5,11 @@ build-backend = "setuptools.build_meta"
 [tool.setuptools]
 packages = ["pygrin"]
 
+[tool.setuptools.dynamic]
+version = {attr = "pygrin.__version__"}
+
 [project]
 name = "pygrin"
-version = "0.6.0"
 authors = [
     { name = "Scott Prahl", email = "scott.prahl@oit.edu" }
 ]
@@ -15,10 +17,6 @@ description = "Gradient Index (GRIN) Lens Calculations"
 keywords = ["endoscope", "pitch", "SELFOC", "Graded Index"]
 readme = "README.rst"
 license = "MIT"
-dependencies = [
-    "matplotlib",
-    "numpy",
-]
 requires-python = ">=3.9"
 classifiers = [
     "Development Status :: 5 - Production/Stable",
@@ -30,11 +28,50 @@ classifiers = [
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
-    "Programming Language :: Python :: 3.13"
+]
+dynamic = ["version"]
+dependencies = [
+    "numpy",
+    "matplotlib",
 ]
 
 [project.optional-dependencies]
-dev = ["pytest >= 7.0"]
+docs = [
+  "Sphinx==8.1.3",
+  "nbsphinx==0.9.7",
+  "sphinx_automodapi",
+  "sphinx_rtd_theme",
+]
+
+dev = [
+  # Testing
+  "pytest",
+
+  # Lint / QA
+  "ruff",
+  "yamllint",
+  "rstcheck",
+  "pylint",
+  "pyroma",
+  "black[jupyter]",
+
+  # Release / packaging checks
+  "build",
+  "check-manifest",
+  "libarchive-c",
+  "pyyaml",
+  "setuptools",
+
+  # Notebooks (local JupyterLab workflows)
+  "jupyterlab",
+  "nbconvert",
+  "nbformat",
+]
+
+lite = [
+  "jupyterlite-core==0.6.4",
+  "jupyterlite-pyodide-kernel==0.6.1",
+]
 
 [project.urls]
 Homepage = "https://github.com/scottprahl/pygrin"

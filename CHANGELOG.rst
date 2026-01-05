@@ -1,6 +1,14 @@
 Changelog
 =========
 
+0.6.1
+-----
+* remove requirements*.txt, all deps in pyproject.toml
+* version info only in __init__.py
+* update readthedocs configuration
+* update github action to publish to pypi
+* fix pylint warnings in update_citation.py
+
 0.6.0
 -----
 * support jupyterlite

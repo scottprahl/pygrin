@@ -2,7 +2,7 @@ PACKAGE         := pygrin
 GITHUB_USER     := scottprahl
 
 # -------- venv config --------
-PY_VERSION      ?= 3.11
+PY_VERSION      ?= 3.12
 VENV            ?= .venv
 PY              := /opt/homebrew/opt/python@$(PY_VERSION)/bin/python$(PY_VERSION)
 PYTHON          := $(VENV)/bin/python
@@ -19,6 +19,7 @@ OUT_ROOT        := $(ROOT)/_site
 OUT_DIR         := $(OUT_ROOT)/$(PACKAGE)
 STAGE_DIR       := $(ROOT)/.lite_src
 DOIT_DB         := $(ROOT)/.jupyterlite.doit.db
+LITE_CONFIG     := $(ROOT)/$(PACKAGE)/jupyter_lite_config.json
 
 # --- GitHub Pages deploy config ---
 PAGES_BRANCH    := gh-pages
@@ -75,8 +76,8 @@ help:
 	@echo "  lite-clean     - Remove JupyterLite outputs"
 	@echo "  realclean      - clean + remove $(VENV)"
 
-# venv bootstrap (runs once, or when requirements change)
-$(VENV)/.ready: Makefile $(REQUIREMENTS)
+# venv bootstrap
+$(VENV)/.ready: Makefile $(PYPROJECT)
 	@echo "==> Ensuring venv at $(VENV) using $(PY)"
 	@if [ ! -x "$(PY)" ]; then \
 		echo "❌ Homebrew Python $(PY_VERSION) not found at $(PY)"; \
@@ -86,11 +87,9 @@ $(VENV)/.ready: Makefile $(REQUIREMENTS)
 	@if [ ! -d "$(VENV)" ]; then \
 		"$(PY)" -m venv "$(VENV)"; \
 	fi
-	@$(PIP) -q install --upgrade pip wheel
-
-	@echo "==> Installing dev requirements from $(REQUIREMENTS)"
-	@$(PIP) -q install -r "$(REQUIREMENTS)"
-	
+	@$(PYTHON) -m pip -q install --upgrade pip wheel
+	@echo "==> Installing $(PACKAGE) + dev extras"
+	@$(PYTHON) -m pip install -q -e ".[dev,docs,lite]"
 	@touch "$(VENV)/.ready"
 	@echo "✅ venv ready"
 
@@ -171,10 +170,7 @@ rcheck:
 	@echo "✅ Release checks complete"
 	
 .PHONY: lite
-lite: $(VENV)/.ready
-	@echo "==> Ensuring required files exist"; \
-	test -f "$(ROOT)/jupyter_lite_config.json" || (echo "❌ Missing jupyter_lite_config.json" && false)
-
+lite: $(VENV)/.ready $(LITE_CONFIG)
 	@echo "==> Building package wheel for PyOdide"
 	@$(PYTHON) -m build
 
@@ -208,6 +204,7 @@ lite: $(VENV)/.ready
 
 	@echo "==> Building JupyterLite"
 	@"$(PYTHON)" -m jupyter lite build \
+		--config="$(LITE_CONFIG)" \
 		--contents="$(STAGE_DIR)" \
 		--output-dir="$(OUT_DIR)"
 
