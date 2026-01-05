@@ -8,7 +8,7 @@ PY              := /opt/homebrew/opt/python@$(PY_VERSION)/bin/python$(PY_VERSION
 PYTHON          := $(VENV)/bin/python
 SERVE_PY        := $(abspath $(PYTHON))
 PIP             := $(VENV)/bin/pip
-REQUIREMENTS    := requirements-dev.txt
+PYPROJECT       := pyproject.toml
 
 BUILD_APPS      := lab
 DOCS_DIR        := docs
@@ -269,6 +269,7 @@ clean:
 	@find . -name '.DS_Store' -type f -delete
 	@find . -name '.ipynb_checkpoints' -type d -prune -exec rm -rf {} +
 	@find . -name '.pytest_cache' -type d -prune -exec rm -rf {} +
+	rm -rf .cache
 	rm -rf .ruff_cache
 	rm -rf $(PACKAGE).egg-info
 	rm -rf docs/api
