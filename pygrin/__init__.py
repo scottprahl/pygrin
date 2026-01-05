@@ -28,10 +28,10 @@ Functions to help raytrace through GRIN lens.
     plot_principal_planes(n_0, pitch, length, diameter)
 """
 
-__version__ = "0.6.0"
+__version__ = "0.6.1"
 __author__ = "Scott Prahl"
 __email__ = "scott.prahl@oit.edu"
-__copyright__ = "2018-25, Scott Prahl"
+__copyright__ = "2018-26, Scott Prahl"
 __license__ = "MIT"
 __url__ = "https://github.com/scottprahl/pygrin"
 
