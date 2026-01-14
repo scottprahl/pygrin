@@ -132,6 +132,7 @@ yaml-check: $(VENV)/.ready
 	-@$(PYTHON) -m yamllint .github/workflows/citation.yaml
 	-@$(PYTHON) -m yamllint .github/workflows/pypi.yaml
 	-@$(PYTHON) -m yamllint .github/workflows/test.yaml
+	-@$(PYTHON) -m yamllint .readthedocs.yaml
 
 .PHONY: rst-check
 rst-check: $(VENV)/.ready
@@ -160,6 +161,7 @@ rcheck:
 	@$(MAKE) ruff-check
 	@$(MAKE) pylint-check
 	@$(MAKE) rst-check
+	@$(MAKE) yaml-check
 	@$(MAKE) manifest-check
 	@$(MAKE) pyroma-check
 	@$(MAKE) html
