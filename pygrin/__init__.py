@@ -1,7 +1,7 @@
 """
 Gradient Index lens calculations and plots.
 
-More documentation at <https://pygrin.readthedocs.io>
+Much more documentation at <https://pygrin.readthedocs.io>
 
 Functions to locate focal points and cardinal points::
     BFL(n_0, pitch, length)
