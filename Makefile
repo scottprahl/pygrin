@@ -26,13 +26,11 @@ REMOTE          := origin
 HOST            := 127.0.0.1
 PORT            := 8000
 
-PYTEST_OPTS     := -q
+PYTEST_OPTS     := 
 SPHINX_OPTS     := -T -E -b html -d $(DOCS_DIR)/_build/doctrees -D language=en
 PYLINT_TARGETS  := $(PACKAGE)/*.py tests/*.py .github/scripts/update_citation.py
 YAML_TARGETS    := .github/workflows/citation.yaml .github/workflows/pypi.yaml .github/workflows/test.yaml .readthedocs.yaml
 RST_TARGETS     := README.rst CHANGELOG.rst $(DOCS_DIR)/index.rst $(DOCS_DIR)/changelog.rst
-TEST_TARGETS    := tests --ignore=tests/test_all_notebooks.py
-NOTEBOOK_TEST   := tests/test_all_notebooks.py
 
 .PHONY: help
 help:
@@ -90,7 +88,7 @@ test:
 
 .PHONY: note-test
 note-test:
-	$(RUN) pytest --verbose $(NOTEBOOK_TEST)
+	$(RUN) pytest --verbose tests/test_all_notebooks.py
 
 .PHONY: pylint-check
 pylint-check:
