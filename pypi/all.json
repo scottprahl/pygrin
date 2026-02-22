@@ -5,19 +5,19 @@
         {
           "comment_text": "",
           "digests": {
-            "md5": "602a9561c1df95fa35c0dffd1793ba29",
-            "sha256": "c450ba4e3954850cc9c305707f50041c64e345be80fa1458d24d19894518ef55"
+            "md5": "34b292883a87cef2fe88d8be4e8c4dd0",
+            "sha256": "c752af1d2d887bc4f5d2ce62abfec33370e8424cdaf3234fdbfbfbdb770038c9"
           },
           "downloads": -1,
           "filename": "pygrin-0.6.1-py3-none-any.whl",
           "has_sig": false,
-          "md5_digest": "602a9561c1df95fa35c0dffd1793ba29",
+          "md5_digest": "34b292883a87cef2fe88d8be4e8c4dd0",
           "packagetype": "bdist_wheel",
           "python_version": "py3",
-          "requires_python": ">=3.9",
-          "size": 7242,
-          "upload_time": "2026-01-05T15:54:04.950940Z",
-          "upload_time_iso_8601": "2026-01-05T15:54:04.950940Z",
+          "requires_python": ">=3.10",
+          "size": 7263,
+          "upload_time": "2026-02-22T21:26:25.764436Z",
+          "upload_time_iso_8601": "2026-02-22T21:26:25.764436Z",
           "url": "./pygrin-0.6.1-py3-none-any.whl",
           "yanked": false,
           "yanked_reason": null
